@@ -1,0 +1,147 @@
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharp\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication\Communication\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication\Communication\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharpF\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharpF\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharpF\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharpF\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationServerCSharpF\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication\Communication\CommunicationServerCSharp\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\Gan\Desktop\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication\Communication\CommunicationServerCSharp\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\Communication\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\Communication\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\Communication\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\Communication\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication20180604\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication20180604\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\Communication20180604\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\Gan\Desktop\Communication20180604\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\Communication20180604\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\C\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\C\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\C\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\C\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\C\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\C\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\C\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\C\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\C\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\TEC\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\TEC\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\TEC\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\TEC\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\TEC\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180606  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180606  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180606  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180606  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180606  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180607  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180607  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180607  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180607  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180607  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180608  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180608  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\20180608  COMM - 複製 (2)\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180608  COMM - 複製 (2)\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180608  COMM - 複製 (2)\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180608  COMM - 複製 (2)\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180608  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180608  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180608  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180613   Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\Gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\Gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\Gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\Gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum\obj\Debug\Enum.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum\obj\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum\obj\Debug\Enum.pdb
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.dll
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.pdb

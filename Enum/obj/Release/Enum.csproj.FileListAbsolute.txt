@@ -1,0 +1,4 @@
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\bin\Release\Enum.dll
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\bin\Release\Enum.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\obj\Release\Enum.dll
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\Enum\obj\Release\Enum.pdb

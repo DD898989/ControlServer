@@ -1,0 +1,203 @@
+﻿
+
+
+
+
+
+
+#if CPP_NOW
+#define public
+#else
+namespace Enum_
+{
+#endif
+
+
+    public enum Method
+    {
+        Method_Reject = 1000,
+        Method_Start,
+        Method_OK,
+        Method_NG,
+    };
+
+    public enum RWIAR
+    {
+        Just_Walking,
+        Wait_This_Pace_Finished,
+        Stop_Walking,
+        Start_Walking,
+        Resume_Walking,
+        End_Walking,
+    };
+
+    namespace TTom
+    {
+        public enum Walking
+        {
+            RightFootForward,
+            IsRightFootFinished,
+            LeftFootForward,
+            IsLeftFootFinished,
+        };
+    }
+
+    namespace MMary
+    {
+        public enum Walking
+        {
+            RightFootForward,
+            IsRightFootFinished,
+            LeftFootForward,
+            IsLeftFootFinished,
+        };
+    }
+
+    public enum TestEnum
+    {
+        Test1,
+        Test2,
+        Test3,
+    };
+
+    public enum DP
+    {
+        DB_DATA_POOL_SIZE = 10000,
+        //-----------------------------------------
+        DoubleDataPoolMinBoundary = 1,
+        //-----------------------------------------
+
+
+
+
+
+
+
+
+        //-----------------------------------------
+        DbDataPoolMaxBoundary = DB_DATA_POOL_SIZE / 8,
+        //-----------------------------------------
+    };
+
+    public enum CS //communication server
+    {
+        CS_Lock,     //CS_XXX  WIP(CSharp)
+        CS_Unlock,   //CS_XXX  WIP(CPP)
+        CS_OK,
+        CS_NG,
+        CS_NULL,
+        //-------------------------------------
+        CS_XXXX_Command_Null,
+        CS_Mary_Command_RightHandForward_LeftHandBackward,
+        CS_Mary_Command_LeftHandForward_RightHandBackward,
+        CS_Tom_Command_RightHandForward_LeftHandBackward,
+        CS_Tom_Command_LeftHandForward_RightHandBackward,
+        //-------------------------------------
+
+    };
+    public enum IP
+    {
+        INT_DATA_POOL_SIZE = 10000,
+        //-----------------------------------------
+        IntDataPoolMinBoundary = 1,
+        //-----------------------------------------
+        Method_RWIAR_State,
+        Method_Tom_Walking,
+        Method_Mary_Walking,
+
+
+
+        //---------------------------------------
+        CS_Mary_CmdResult,
+        //---------------------------------------
+        CS_Mary_Command,
+        CS_Mary_Command_AutoUnlock,     //WIP(CS_Mary_CmdResult,CS_NULL);
+        CS_Mary_Command_End,
+        //---------------------------------------
+
+
+        //---------------------------------------
+        CS_Tom_CmdResult,
+        //---------------------------------------
+        CS_Tom_Command,
+        CS_Tom_Command_AutoUnlock,
+        CS_Tom_Command_End,
+        //---------------------------------------
+
+
+
+
+
+
+        //-----------------------------------------
+        IntDataPoolMaxBoundary = INT_DATA_POOL_SIZE / 4,
+        //-----------------------------------------
+    };
+
+
+
+
+
+    public enum Registter
+    {
+        Method_Reg,
+        RWIAR_Reg,
+        TestEnum_Reg,
+        DP_Reg,
+        CS_Reg,
+        IP_Reg,
+    };
+
+
+
+#if CPP_NOW
+#undef public
+#else
+}
+#endif
+
+
+
+//----------------------DO NOT DELETE THIS COMMAND,  FOR ERASE-------------------IS_HERE-------------
+
+
+
+#if CPP_NOW
+
+inline const char* p(RWIAR v)
+{
+    switch (v)
+    {
+        case Just_Walking:  return "Enum_.RWIAR.Just_Walking";
+        case Wait_This_Pace_Finished:  return "Enum_.RWIAR.Wait_This_Pace_Finished";
+        case Stop_Walking:  return "Enum_.RWIAR.Stop_Walking";
+        case Start_Walking:  return "Enum_.RWIAR.Start_Walking";
+        case Resume_Walking:  return "Enum_.RWIAR.Resume_Walking";
+        case End_Walking:  return "Enum_.RWIAR.End_Walking";
+    }
+}
+
+inline const char* p(IP v)
+{
+    switch (v)
+    {
+        case IntDataPoolMinBoundary:  return "Enum_.IP.IntDataPoolMinBoundary";
+        case Method_RWIAR_State:  return "Enum_.IP.Method_RWIAR_State";
+        case Method_Tom_Walking:  return "Enum_.IP.Method_Tom_Walking";
+        case Method_Mary_Walking:  return "Enum_.IP.Method_Mary_Walking";
+        case CS_Mary_CmdResult:  return "Enum_.IP.CS_Mary_CmdResult";
+        case CS_Mary_Command:  return "Enum_.IP.CS_Mary_Command";
+        case CS_Mary_Command_AutoUnlock:  return "Enum_.IP.CS_Mary_Command_AutoUnlock";
+        case CS_Mary_Command_End:  return "Enum_.IP.CS_Mary_Command_End";
+        case CS_Tom_CmdResult:  return "Enum_.IP.CS_Tom_CmdResult";
+        case CS_Tom_Command:  return "Enum_.IP.CS_Tom_Command";
+        case CS_Tom_Command_AutoUnlock:  return "Enum_.IP.CS_Tom_Command_AutoUnlock";
+        case CS_Tom_Command_End:  return "Enum_.IP.CS_Tom_Command_End";
+        case IntDataPoolMaxBoundary:  return "Enum_.IP.IntDataPoolMaxBoundary";
+        case INT_DATA_POOL_SIZE:  return "Enum_.IP.INT_DATA_POOL_SIZE";
+    }
+}
+
+
+
+#endif

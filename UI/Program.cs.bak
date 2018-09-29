@@ -1,0 +1,230 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.IO;
+using Enum_;
+using System.Threading;
+using System.Diagnostics;
+using System.IO.MemoryMappedFiles;
+using System.IO.Pipes;
+
+namespace UI
+{
+    static class p  //program
+    {
+        public const int MAX_LOG_SIZE = 200;  //SYS_SEND_LOG_CHAR_200 = SYS_SEND_LOG_CHAR_1 + 199,
+        const int INT_SIZE = 4;
+        const int LOG_TIME_STRING_LENGTH = 12;  //ex:  "mm:ss.sss" length = 9
+
+        //memory pool
+        static private object _lockMemoryPool = new object();
+        static private MemoryMappedViewStream _mmfvs;
+        static private byte[] _intBuf = new byte[(int)IP.IntegerDataPoolMaxBoundary * INT_SIZE];
+
+        //static pool
+        static private object _lockStaticPool = new object();
+        static private FileInfo _fi_SYS_handle;
+        static private FileInfo _fi_UI_handle;
+        const string ROOT_PATH = @"D:\ControlServer\";
+        const string UI_PATH = ROOT_PATH + "Query_Static_Pool_UI_hanle";
+        const string SYS_PATH = ROOT_PATH + "Query_Static_Pool_SYS_hanle";
+        const string STATIC_POOL_PATH = ROOT_PATH + "Static_Pool";
+        
+
+        //UI log
+        public static void log(string s)  
+        {
+            while (true)
+            {
+                //if (p.RP(IP.IS_SYS_SEND_LOG) == 0)
+                //{
+                Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff") + " [U I] " + s);
+                    break;
+                //}
+            }
+        }
+
+
+        //SYS log
+        //static public string WriteSysLog(int nMsgLen) 
+        //{
+        //    char[] ary = new char[nMsgLen];
+        //    for (int i = 0; i < nMsgLen; i++)
+        //        ary[i] = Convert.ToChar(p.RP((IP)((int)IP.SYS_SEND_LOG_CHAR_1 + i)));
+        //    String text = new String(ary, 0, nMsgLen);
+        //    text = text.Substring(0, LOG_TIME_STRING_LENGTH) + "[[[SYS]]]" + text.Substring(LOG_TIME_STRING_LENGTH, text.Length - LOG_TIME_STRING_LENGTH);
+        //    Console.WriteLine(text);
+        //    p.WP(IP.IS_SYS_SEND_LOG, 0);
+        //    return text;
+        //}
+
+
+        //write memory pool
+        static public void WP(IP location, int nWriteData)
+        {
+            lock (_lockMemoryPool)
+            {
+                while (true)
+                {
+                    _mmfvs.Seek((int)location * INT_SIZE, SeekOrigin.Begin);
+                    _mmfvs.Write(BitConverter.GetBytes(nWriteData), 0, INT_SIZE);
+                    return;
+                }
+            }
+        }
+
+        //read memory pool
+        static public int RP(IP location)
+        {
+            lock (_lockMemoryPool) 
+            {
+                _mmfvs.Seek((int)location * INT_SIZE, SeekOrigin.Begin);
+                _mmfvs.Read(_intBuf, 0, INT_SIZE);
+                return BitConverter.ToInt32(_intBuf, 0);
+            }
+        }
+
+
+
+        //write static pool
+        static public void WSP(IP location, int nWriteData) 
+        {
+            int nLoc = INT_SIZE * (int)location;
+            bool bDoneWrite = false;
+
+            lock (_lockStaticPool)
+            {
+                while (true)
+                {
+                    _fi_UI_handle.Attributes = _fi_UI_handle.Attributes & ~FileAttributes.Hidden;
+
+                    _fi_SYS_handle.Refresh();
+                    if (_fi_SYS_handle.Attributes.HasFlag(FileAttributes.Hidden)) 
+                    {
+                        using (BinaryWriter writer = new BinaryWriter(new FileStream(STATIC_POOL_PATH, FileMode.Open, FileAccess.Write, FileShare.ReadWrite)))
+                        {
+                            writer.Seek(nLoc, SeekOrigin.Begin); 
+                            writer.Write(nWriteData);
+                        }
+                        bDoneWrite = true;
+                    }
+                    File.SetAttributes(UI_PATH, File.GetAttributes(UI_PATH) | FileAttributes.Hidden);
+                    if (bDoneWrite)
+                        break;
+                }
+            }
+        }
+
+        //read static pool
+        static public int RSP(IP location)
+        {
+            byte[] buf = new byte[INT_SIZE];
+            int nLoc = INT_SIZE * (int)location;
+            using (BinaryReader reader = new BinaryReader(new FileStream(STATIC_POOL_PATH, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
+            {
+                reader.BaseStream.Seek(nLoc, SeekOrigin.Begin);
+                reader.Read(buf, 0, INT_SIZE);
+            }
+            return BitConverter.ToInt32(buf, 0);
+        }
+
+
+
+        [STAThread]
+        static void Main(string[] arg)
+        {
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "UI Main()");
+
+            if (arg.Length == 0) //UI is start project
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo(ROOT_PATH + "SYS.exe");
+                startInfo.WorkingDirectory = ROOT_PATH; startInfo.Arguments = "UI call SYS";
+                Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "UI call SYS");
+                Process.Start(startInfo);
+            }
+            else                 //UI is called by SYS
+            {
+                Console.Write(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Main arg:  ");
+                for (int i = 0; i < arg.Length; i++)
+                    Console.Write(arg[i] + " ");
+                Console.WriteLine("");
+            }
+
+            while (true)
+            {
+                try
+                {
+                    _mmfvs = MemoryMappedFile.OpenExisting("MySharedMemory").CreateViewStream();
+                    Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Successed connecting to Shared Memory");
+                    break;
+                }
+                catch
+                {
+                }
+            }
+
+            //while (true)
+            //{
+            //    int n = p.RP(IP.IS_SYS_SEND_LOG);
+            //    if (n > 0 && n < MAX_LOG_SIZE)
+            //    {
+            //        p.WriteSysLog(n);
+            //        Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Successed writing SYS test msg");
+            //        break;
+            //    }
+            //}
+
+            //link to handle file created by SYS
+            _fi_UI_handle = new FileInfo(UI_PATH);
+            _fi_SYS_handle = new FileInfo(SYS_PATH);
+
+            //init control server
+            for (int i = (int)IP.ControlServer_Start; i < (int)IP.ControlServer_End; i++)
+                WP((IP)i, (int)CS.CS_Unlock);
+            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Finish Init Control Server");
+
+
+
+
+
+
+
+
+            //wait check thread
+            new System.Threading.Thread(() =>
+            {
+                while (true)
+                {
+                    using (NamedPipeServerStream pipeStream = new NamedPipeServerStream("mypipe"))
+                    {
+                        pipeStream.WaitForConnection();
+                        StreamReader sr = new StreamReader(pipeStream);
+                        string tmp;
+                        while ((tmp = sr.ReadLine()) != null)
+                        {
+                            //if(tmp.Contains("cscmd"))
+                            //    [...]
+                            //else
+                                Console.WriteLine(tmp);
+                        }
+                    }
+                }
+            }).Start();
+
+
+
+
+
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+        }
+    }
+}

@@ -1,0 +1,135 @@
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180615  Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+D:\ControlServer\Enum_H_Factory.exe
+D:\ControlServer\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\20180620Interview - 複製 - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview_修改成日期IR\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180626Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview - 複製\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\20180803MyMPIMyMPI\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\原始\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\修改\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.dll
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\bin\Debug\Enum.pdb
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+D:\MyMPI\201808231800Interview\CommunicationProj\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb

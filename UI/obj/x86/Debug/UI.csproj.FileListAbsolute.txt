@@ -1,0 +1,42 @@
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\20180731Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.pdb
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.exe
+C:\Users\dave.gan\Desktop\MyMPIMyMPI\201808231800Interview\20180611  COMM\CommunicationProj - CS也修改成listen前輩分\UI\obj\x86\Debug\UI.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\20180611  COMM\CommunicationProj\UI\obj\x86\Debug\UI.pdb
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.exe
+C:\Users\lenovo\Desktop\201808311823MyMPI\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.exe
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.pdb
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\dave.gan\Desktop\CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.exe
+C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\UI\obj\x86\Debug\UI.pdb
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.csprojResolveAssemblyReference.cache
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.Form1.resources
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.Properties.Resources.resources
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.csproj.GenerateResource.Cache
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.exe
+D:\MyMPI\201808231800Interview\CommunicationProj\UI\obj\x86\Debug\UI.pdb

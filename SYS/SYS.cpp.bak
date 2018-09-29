@@ -1,0 +1,993 @@
+
+#include "stdafx.h"
+#include "SYS.h"
+
+int main(int argc, char **argv)
+{
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"main()"<<endl;
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"create Shared Memory"<<endl;
+	m_handle = CreateFileMappingW(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(MemoryPoolStruc), L"MySharedMemory");
+	m_pMemPool =  (struct MemoryPoolStruc*) MapViewOfFile(m_handle, FILE_MAP_READ|FILE_MAP_WRITE, 0, 0, sizeof(MemoryPoolStruc));
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"main argv: ";
+	for(int i = 1; i < argc; i++) 
+		cout << argv[i]<<" ";
+	cout << endl; 
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"remove static memory query files"<<endl;
+	remove(m_sUIPath);
+	remove(m_sSYSPath);
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"create static memory query files"<<endl;
+	if (!std::ifstream(m_sUIPath))
+		std::ofstream outfile (m_sUIPath);
+	if (!std::ifstream(m_sSYSPath))
+		std::ofstream outfile (m_sSYSPath);
+	if (!std::ifstream(m_sStaticPoolPath))
+		std::ofstream outfile (m_sStaticPoolPath);
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"set static memory query files hidden"<<endl;
+	mbstowcs(m_wtextUI, m_sUIPath, strlen(m_sUIPath)+1); 
+	m_pCShandle = m_wtextUI;
+	mbstowcs(m_wtextSYS, m_sSYSPath, strlen(m_sSYSPath)+1);    
+	LPWSTR ptr_CPP_control = m_wtextSYS;   m_nAttr= GetFileAttributes(ptr_CPP_control); 
+	SetFileAttributes(m_wtextSYS, FILE_ATTRIBUTE_HIDDEN); 
+	SetFileAttributes(m_wtextUI,  FILE_ATTRIBUTE_HIDDEN); 
+	//-----------------------------------------------------------
+	if (argc == 1)
+	{  
+		cout<<GetTime()<<"call UI"<<endl;
+		system ("start D:\\ControlServer\\UI.exe SYS call UI");
+	}
+	//-----------------------------------------------------------
+	cout<<GetTime()<<"SYS send UI test msg: TEST!"<<endl;
+	log2ui("SYS send UI test msg: TEST!");
+	//FreeConsole(); //hide console window
+	//-----------------------------------------------------------
+	log2ui("run SimulateMultiThread()");
+	SimulateMultiThread();
+	//-----------------------------------------------------------
+}
+
+void SimulateMultiThread()
+{
+	int nTimeNow = clock();
+	int nOneMiniSecondTimer = nTimeNow;
+	int nTenMiniSecondTimer = nTimeNow;
+	int nOneSecondTimer = nTimeNow;
+
+	while (true)
+	{
+		nTimeNow =  clock();
+
+		//parent seq
+		M_Car_ForwardThenBackward(RP(IP::Sys_M_Car_ForwardThenBackward));
+		M_Car_CircleBlock(RP(IP::Sys_M_Car_CircleBlock));
+		M_Bike_ForwardThenBackward(RP(IP::Sys_M_Bike_ForwardThenBackward));
+		M_Bike_CircleBlock(RP(IP::Sys_M_Bike_CircleBlock));
+
+		while (nTimeNow > nOneMiniSecondTimer+1)   
+		{
+			//write code here
+			nOneMiniSecondTimer = nTimeNow;
+		}
+
+		while (nTimeNow > nTenMiniSecondTimer+10)   
+		{
+			//write code here
+			nTenMiniSecondTimer = nTimeNow;
+		}
+
+		while (nTimeNow > nOneSecondTimer+1000)   
+		{
+			//write code here
+			nOneSecondTimer = nTimeNow;
+		}
+	}
+}
+
+int M_Sub_Sequence_b1(int nSeq_Outside)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Now;
+	static int s_nSameCaseCount;
+	string sPrintSeq = "M_Sub_Sequence_b1-----------";
+
+	//-----------------------------check case legal
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::call_MStart,
+		(int)nSeq_Outside,
+		(int)s_nSeq_Now,
+		(int)cas::MReject
+		);
+	//-------------------------------switch
+
+	switch(nSeq_Outside)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::call_MStart:
+		s_nSeq_Now = cas::MWait1;
+		break;
+
+	case cas::MWait1:
+		s_nSeq_Now = cas::MWait2;
+		break;
+
+	case cas::MWait2:
+		s_nSeq_Now = cas::MWait3;
+		break;
+
+	case cas::MWait3:
+		s_nSeq_Now = cas::MOK;
+		break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		s_nSeq_Now = cas::MReject;
+		return cas::MNNNNNNNNGGGGGGGG;
+
+	case cas::MOK:
+		s_nSeq_Now = cas::MReject;
+		return cas::MOK;
+	}
+	return s_nSeq_Now;
+}
+int M_Sub_Sequence_b2(int nSeq_Outside)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Now;
+	static int s_nSameCaseCount;
+	string sPrintSeq = "M_Sub_Sequence_b2-----------";
+	
+	//-----------------------------check case legal
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::call_MStart,
+		(int)nSeq_Outside,
+		(int)s_nSeq_Now,
+		(int)cas::MReject
+		);
+	//-------------------------------switch
+	switch(nSeq_Outside)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::call_MStart:
+		s_nSeq_Now = cas::MWait1;
+		break;
+
+	case cas::MWait1:
+		s_nSeq_Now = cas::MWait2;
+		break;
+
+	case cas::MWait2:
+		s_nSeq_Now = cas::MCarHorn;
+		break;
+
+	case cas::MCarHorn:
+		if(s_nSameCaseCount==0)
+			cscmd(IP::CS_Car,CS::CS_Car_Horn);
+		else
+			if(RP(IP::CS_Car)==CS::CS_OK)
+				s_nSeq_Now = cas::MOK;
+			else if(RP(IP::CS_Car)==CS::CS_NG)
+				s_nSeq_Now = cas::MNNNNNNNNGGGGGGGG;
+		break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		s_nSeq_Now = cas::MReject;
+		return cas::MNNNNNNNNGGGGGGGG;
+
+	case cas::MOK:
+		s_nSeq_Now = cas::MReject;
+		return cas::MOK;
+	}
+
+	//-------------------------------update method state
+	return s_nSeq_Now;
+}
+int M_Sub_Sequence_B(int nSeq_Outside)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Now;
+	static int s_nSameCaseCount;
+	string sPrintSeq = "M_Sub_Sequence_B-----------";
+	int nTemp;
+
+	//-----------------------------check case legal
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::call_MStart,
+		(int)nSeq_Outside,
+		(int)s_nSeq_Now,
+		(int)cas::MReject
+		);
+	//-------------------------------switch
+
+	switch(nSeq_Outside)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::call_MStart:
+		s_nSeq_Now = cas::MWait1;
+		break;
+
+	case cas::MWait1:
+		s_nSeq_Now = cas::M_call_seq1;
+		break;
+
+	case cas::M_call_seq1:
+		nTemp = M_Sub_Sequence_b1(cas::call_MStart);
+		if(nTemp ==cas::MOK)
+		{
+			s_nSeq_Now = cas::M_call_seq2;
+		}
+		else if(nTemp == cas::MNNNNNNNNGGGGGGGG)
+		{
+			s_nSeq_Now = cas::MNNNNNNNNGGGGGGGG;
+		}
+		break;
+
+	case cas::M_call_seq2:
+		nTemp = M_Sub_Sequence_b2(cas::call_MStart);
+		if(nTemp ==cas::MOK)
+		{
+			s_nSeq_Now = cas::MOK;
+		}
+		else if(nTemp == cas::MNNNNNNNNGGGGGGGG)
+		{
+			s_nSeq_Now = cas::MNNNNNNNNGGGGGGGG;
+		}
+		break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		s_nSeq_Now = cas::MReject;
+		return cas::MNNNNNNNNGGGGGGGG;
+
+	case cas::MOK:
+		s_nSeq_Now = cas::MReject;
+		return cas::MOK;
+	}
+
+	//-------------------------------update method state
+	return s_nSeq_Now;
+}
+int M_Sub_Sequence_A(int nSeq_Outside)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Now;
+	static int s_nSameCaseCount;
+	string sPrintSeq = "M_Sub_Sequence_A-----------";
+
+	//-----------------------------check case legal
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::call_MStart,
+		(int)nSeq_Outside,
+		(int)s_nSeq_Now,
+		(int)cas::MReject
+		);
+	//-------------------------------switch
+
+	switch(nSeq_Outside)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::call_MStart:
+		s_nSeq_Now = cas::MWait1;
+		break;
+
+	case cas::MWait1:
+		s_nSeq_Now = cas::MWait2;
+		break;
+
+	case cas::MWait2:
+		s_nSeq_Now = cas::MWait3;
+		break;
+
+	case cas::MWait3:
+		s_nSeq_Now = cas::MOK;
+		break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		s_nSeq_Now = cas::MReject;
+		return cas::MNNNNNNNNGGGGGGGG;
+
+	case cas::MOK:
+		s_nSeq_Now = cas::MReject;
+		return cas::MOK;
+	}
+
+	//-------------------------------update method state
+	return s_nSeq_Now;
+}
+
+void M_Car_ForwardThenBackward(int nSeq_IP)
+{
+
+	//-----------------------------field definition
+	static int s_nSeq_Pre;
+	static int s_nSameCaseCount;
+	string sPrintSeq="M_Car_ForwardThenBackward-----------";
+	int nTemp = 0;
+	string sTemp = "";
+
+	//-----------------------------check case legal
+
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::btn_MStart,
+		(int)nSeq_IP,
+		(int)s_nSeq_Pre,
+		(int)cas::MReject
+		);
+
+	//-------------------------------switch
+	switch(nSeq_IP)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::btn_MStart:
+
+		//還要同時call兩個甚至三個seq的函數
+		//seq不只要能夠吃一個int參數??  可是這樣要怎麼用fun pointer來傳遞呢?
+		// 母seq要求return true或是bool 之後才是母seq break  所以只要母seq再if判斷裡面部改寫 還是可以做完if後然後下次換swith
+		//要怎麼讓有些seq只能被call一次  如果同時有第二個人用他 那麼那個人要如何有排隊機制?
+		//								  ^^^^^^^^^^^^^^^^^^^^^現在這種情況我們無法判斷會發生什麼事
+		//要怎麼讓有些seq可以同時被call多次???
+		//要怎麼知道有些seq是不是正在被call  我想等他做完再換我做
+
+
+
+		if(s_nSameCaseCount==0)
+		{
+			msg2user("sys start M_Car_ForwardThenBackward"); //parent seq
+		}
+
+		if(RP(IP::CS_Car)==CS::CS_Unlock)
+		{
+			nTemp = M_Sub_Sequence_A(cas::call_MStart);
+			if(nTemp ==cas::MOK)
+			{
+				nSeq_IP = cas::Car_Forward;
+			}
+			else if(nTemp == cas::MNNNNNNNNGGGGGGGG)
+			{
+				nSeq_IP = cas::MNNNNNNNNGGGGGGGG;
+			}
+		}
+		break;
+
+	case cas::Car_Forward:
+		if(s_nSameCaseCount==0)
+		{
+			log2ui(sPrintSeq+"ready send cmd");
+			cscmd(IP::CS_Car,CS::CS_Car_Forward);
+		}
+		else if(s_nSameCaseCount==1)
+		{
+			log2ui(sPrintSeq+"wait1");
+		}
+		else
+		{
+			int nTemp = RP(IP::CS_Car);
+			if(nTemp==CS::CS_OK)
+			{
+				nSeq_IP = cas::Car_Backward;
+			}
+			else if(nTemp==CS::CS_NG)
+			{
+				nSeq_IP = cas::MNNNNNNNNGGGGGGGG;
+			}
+		}
+		break;
+
+	case cas::Car_Backward:
+		if(s_nSameCaseCount==0)
+		{
+			log2ui(sPrintSeq+"ready send cmd");
+			cscmd(IP::CS_Car,CS::CS_Car_Backward);
+		}
+		else if(s_nSameCaseCount==1)
+			log2ui(sPrintSeq+"wait2");
+		else
+		{
+			int nTemp = RP(IP::CS_Car);
+			if(nTemp==CS::CS_OK)
+			{
+				nSeq_IP = cas::M_call_seq;
+			}
+			else if(nTemp==CS::CS_NG)
+			{
+				nSeq_IP = cas::MNNNNNNNNGGGGGGGG;
+			}
+		}
+		break;
+
+
+	case cas::M_call_seq:
+
+		nTemp = M_Sub_Sequence_B(cas::call_MStart);
+		if(nTemp ==cas::MOK)
+		{
+			//做事情
+			nSeq_IP = cas::MOK;
+		}
+		else if(nTemp == cas::MNNNNNNNNGGGGGGGG)
+		{
+			//做事情
+			nSeq_IP = cas::MNNNNNNNNGGGGGGGG;
+		}
+
+		break;
+
+
+	case cas::MOK:
+		cscmd(IP::CS_Car,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys done M_Car_ForwardThenBackward");  //parent seq
+		break;
+
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		cscmd(IP::CS_Car,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys fail M_Car_ForwardThenBackward"); //parent seq
+		break;
+	}
+
+
+	//-------------------------------update method state
+	WP(IP::Sys_M_Car_ForwardThenBackward,nSeq_IP);
+}
+void M_Car_CircleBlock(int nSeq_IP)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Pre;
+	static int s_nSameCaseCount;
+	static int s_nCount;
+	string sPrintSeq = "M_Car_CircleBlock-----------";
+
+	//-----------------------------check case legal
+
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::btn_MStart,
+		(int)nSeq_IP,
+		(int)s_nSeq_Pre,
+		(int)cas::MReject
+		);
+
+	//-------------------------------switch
+
+	switch(nSeq_IP)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::btn_MStart:
+		if(s_nSameCaseCount==0)
+		{
+			msg2user("sys start M_Car_CircleBlock"); //parent seq
+			s_nCount =0;
+		}
+		else
+		{
+			if(RP(IP::CS_Car)==CS::CS_Unlock)
+			{
+				cscmd(IP::CS_Car,CS::CS_OK);
+				nSeq_IP = cas::Car_Forward;
+			}
+		}
+		break;
+
+
+	case cas::Dispatch_9845:
+		if (s_nCount==0)
+			nSeq_IP = cas::TurnToEast;
+		else if (s_nCount==1)
+			nSeq_IP = cas::TurnToSouth;
+		else if (s_nCount==2)
+			nSeq_IP = cas::TurnToWest;
+		else if (s_nCount==3)
+			nSeq_IP = cas::TurnToNorth;
+		break;
+
+	case cas::Car_Forward:
+		if(s_nCount==4)
+			nSeq_IP = cas::MOK;
+		else
+		{
+			if(s_nSameCaseCount==0)
+				cscmd(IP::CS_Car,CS::CS_Car_Forward);
+			else if(s_nSameCaseCount==1)
+				log2ui(sPrintSeq+"wait");
+			else
+				if(RP(IP::CS_Car)==CS::CS_OK)
+					nSeq_IP = cas::Dispatch_9845;
+		}
+		break;
+
+	case cas::TurnToEast:
+		nSeq_IP = cas::Car_TurnRight;
+		break;
+
+	case cas::TurnToSouth:
+		nSeq_IP = cas::Car_TurnRight;
+		break;
+
+	case cas::TurnToWest:
+		nSeq_IP = cas::Car_TurnRight;
+		break;
+
+	case cas::TurnToNorth:
+		nSeq_IP = cas::Car_TurnRight;
+		break;
+	case cas::Car_TurnRight:
+		if(s_nSameCaseCount==0)
+			cscmd(IP::CS_Car,CS::CS_Car_TurnRight);
+		else if(s_nSameCaseCount==1)
+			log2ui(sPrintSeq+"wait");
+		else
+			if(RP(IP::CS_Car)==CS::CS_OK)
+			{
+				nSeq_IP = cas::Car_Forward;
+				s_nCount++;
+			}
+			else if(RP(IP::CS_Car)==CS::CS_NG)
+			{
+				nSeq_IP = cas::MNNNNNNNNGGGGGGGG;
+			}
+			break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		cscmd(IP::CS_Car,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys fail M_Car_CircleBlock");  //parent seq
+		break;
+
+	case cas::MOK:
+		cscmd(IP::CS_Car,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys done M_Car_CircleBlock");  //parent seq
+		break;
+	}
+
+	//-------------------------------update method state
+	WP(IP::Sys_M_Car_CircleBlock,nSeq_IP);
+}
+void M_Bike_CircleBlock(int nSeq_IP)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Pre;
+	static int s_nSameCaseCount;
+	static int s_nCount;
+	string sPrintSeq = "M_Bike_CircleBlock-----------";
+
+	//-----------------------------check case legal
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::btn_MStart,
+		(int)nSeq_IP,
+		(int)s_nSeq_Pre,
+		(int)cas::MReject
+		);
+
+	//-------------------------------switch
+
+	switch(nSeq_IP)
+	{
+	case cas::MReject:
+		break;
+
+	case cas::btn_MStart:
+		if(s_nSameCaseCount==0)
+		{
+			msg2user("sys start M_Bike_CircleBlock"); //parent seq
+			s_nCount =0;
+		}
+		else
+		{
+			if(RP(IP::CS_Bike)==CS::CS_Unlock)
+			{
+				cscmd(IP::CS_Bike,CS::CS_OK);
+				nSeq_IP = cas::Bike_Forward;
+			}
+		}
+		break;
+
+
+	case cas::Dispatch_9845:
+		if (s_nCount==0)
+			nSeq_IP = cas::TurnToEast;
+		else if (s_nCount==1)
+			nSeq_IP = cas::TurnToSouth;
+		else if (s_nCount==2)
+			nSeq_IP = cas::TurnToWest;
+		else if (s_nCount==3)
+			nSeq_IP = cas::TurnToNorth;
+		break;
+
+	case cas::Bike_Forward:
+		if(s_nCount==4)
+			nSeq_IP = cas::MOK;
+		else
+		{
+			if(s_nSameCaseCount==0)
+				cscmd(IP::CS_Bike,CS::CS_Bike_Forward);
+			else if(s_nSameCaseCount==1)
+				log2ui(sPrintSeq+"wait");
+			else
+				if(RP(IP::CS_Bike)==CS::CS_OK)
+					nSeq_IP = cas::Dispatch_9845;
+		}
+		break;
+
+	case cas::TurnToEast:
+		nSeq_IP = cas::Bike_TurnRight;
+		break;
+
+	case cas::TurnToSouth:
+		nSeq_IP = cas::Bike_TurnRight;
+		break;
+
+	case cas::TurnToWest:
+		nSeq_IP = cas::Bike_TurnRight;
+		break;
+
+	case cas::TurnToNorth:
+		nSeq_IP = cas::Bike_TurnRight;
+		break;
+
+	case cas::Bike_TurnRight:
+		if(s_nSameCaseCount==0)
+			cscmd(IP::CS_Bike,CS::CS_Bike_TurnRight);
+		else if(s_nSameCaseCount==1)
+			log2ui(sPrintSeq+"wait");
+		else
+			if(RP(IP::CS_Bike)==CS::CS_OK)
+			{
+				nSeq_IP = cas::Bike_Forward;
+				s_nCount++;
+			}
+			break;
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		cscmd(IP::CS_Bike,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys fail M_Bike_CircleBlock");  //parent seq
+		break;
+
+	case cas::MOK:
+		cscmd(IP::CS_Bike,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys done M_Bike_CircleBlock");  //parent seq
+		break;
+	}
+
+	//-------------------------------update method state
+	WP(IP::Sys_M_Bike_CircleBlock,nSeq_IP);
+
+}
+void M_Bike_ForwardThenBackward(int nSeq_IP)
+{
+	//-----------------------------field definition
+	static int s_nSeq_Pre;
+	static int s_nSameCaseCount;
+	string sPrintSeq = "M_Bike_ForwardThenBackward-----------";
+	//-----------------------------check case legal
+
+	CheckInputSeqLegal(
+		sPrintSeq,
+		s_nSameCaseCount,
+		(int)cas::btn_MStart,
+		(int)nSeq_IP,
+		(int)s_nSeq_Pre,
+		(int)cas::MReject
+		);
+
+	//-------------------------------switch
+	switch(nSeq_IP)
+	{
+	case cas::MReject:
+		break;
+	case cas::btn_MStart:
+
+		if(s_nSameCaseCount==0)
+			msg2user("sys start M_Bike_ForwardThenBackward"); //parent seq
+
+		if(RP(IP::CS_Bike)==CS::CS_Unlock)
+		{
+			nSeq_IP = cas::Bike_Forward;
+		}
+		break;
+
+	case cas::Bike_Forward:
+		if(s_nSameCaseCount==0)
+			cscmd(IP::CS_Bike,CS::CS_Bike_Forward);
+		else if(s_nSameCaseCount==1)
+			log2ui(sPrintSeq+"wait1");
+		else
+			if(RP(IP::CS_Bike)==CS::CS_OK)
+				nSeq_IP = cas::Bike_Backward;
+		break;
+
+	case cas::Bike_Backward:
+		if(s_nSameCaseCount==0)
+			cscmd(IP::CS_Bike,CS::CS_Bike_Backward);
+		else if(s_nSameCaseCount==1)
+			log2ui(sPrintSeq+"wait2");
+		else
+		{
+			if(RP(IP::CS_Bike)==CS::CS_OK)
+				nSeq_IP = cas::MOK;
+		}
+		break;
+
+
+	case cas::MNNNNNNNNGGGGGGGG:
+		cscmd(IP::CS_Bike,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys fail M_Bike_ForwardThenBackward");  //parent seq
+		break;
+
+	case cas::MOK:
+		cscmd(IP::CS_Bike,CS::CS_Unlock);
+		nSeq_IP = cas::MReject;
+		msg2user("sys done M_Bike_ForwardThenBackward");  //parent seq
+		break;
+	}
+
+
+	//-------------------------------update method state
+	WP(IP::Sys_M_Bike_ForwardThenBackward,nSeq_IP);
+}
+
+string GetTime()
+{
+	string text;
+	ostringstream oss;
+
+	GetLocalTime(&m_st);
+
+	if(m_st.wHour<10)
+		oss<<0;
+	oss << m_st.wHour<<":";
+
+	if(m_st.wMinute<10)
+		oss<<0;
+	oss << m_st.wMinute<<":";
+
+	if(m_st.wSecond<10)
+		oss<<0;
+	oss << m_st.wSecond<< ".";
+
+	if(m_st.wMilliseconds<100)
+		oss<<0;
+	if(m_st.wMilliseconds<10)
+		oss<<0;
+	oss <<m_st.wMilliseconds;
+
+	text+=oss.str();
+	return text;
+}
+void WSP(int location,int value)
+{
+	SetFileAttributes(m_wtextSYS, 32 & ~FILE_ATTRIBUTE_HIDDEN);
+	while(true)
+	{
+		if ((GetFileAttributes(m_pCShandle) & FILE_ATTRIBUTE_HIDDEN) == 0) 
+		{
+			//SetFileAttributes(m_wtextSYS, m_nAttr | FILE_ATTRIBUTE_HIDDEN); 
+			//only one between SYS and UI has to set(disable SYS for single thread performance)
+			continue;
+		}
+
+		m_WIP = _fsopen(m_sStaticPoolPath, "rb+",_SH_DENYWR);
+		fseek(m_WIP, (location) * 4/*=int size*/, SEEK_SET);
+		fwrite(&value, 4/*=int size*/, 1, m_WIP); 
+		fclose(m_WIP);
+
+		SetFileAttributes(m_wtextSYS, FILE_ATTRIBUTE_HIDDEN); 
+		break;
+	}
+
+	return ;
+}
+int RSP(int location)
+{
+	FILE *f = fopen(m_sStaticPoolPath, "rb");
+	fseek(f, (location) * sizeof(int), SEEK_SET);
+	fread(&m_nResultInt, sizeof(int), 1, f);
+	fclose(f);
+
+	return m_nResultInt;
+}
+void cscmd(IP csip,CS cscmd)
+{
+
+	WP(csip,cscmd);
+	int iinntt=(int)csip;
+
+
+
+
+
+
+
+
+	bool flg;
+	std::string filePipe = "//./pipe/ControlServerCmdPipe";
+	std::wstring stemp = s2ws(filePipe);
+	LPCWSTR result = stemp.c_str();
+	LPDWORD dwWrite = NULL;
+
+	while(true)
+	{
+		HANDLE hFile = CreateFile(result, GENERIC_WRITE,
+			FILE_SHARE_READ | FILE_SHARE_WRITE , NULL, OPEN_EXISTING,
+			FILE_ATTRIBUTE_NORMAL, NULL);
+
+		if(hFile == INVALID_HANDLE_VALUE)
+		{
+			//DWORD dw = GetLastError();
+			//printf("CreateFile failed for Named Pipe client\n:" );
+			continue;
+		}
+		else
+		{
+			flg = WriteFile(hFile, &iinntt, 2, dwWrite, NULL);
+			if (FALSE == flg)  
+			{
+				//printf("WriteFile failed for Named Pipe client\n");  
+				continue;
+			}
+			CloseHandle(hFile);
+			break;
+		}
+	}
+}
+void log2ui(string s)
+{
+	//while (true)
+	//{
+	//	if (RP(IP::IS_SYS_SEND_LOG) == 0)
+	//	{
+	//		WP(IP::IS_SYS_SEND_LOG,-1);
+
+	//		string text;
+
+	//		text+=GetTime();
+
+	//		text+=s;
+	//		for(int i=0;i<text.length();i++)
+	//			WP(IP::SYS_SEND_LOG_CHAR_1+i,text[i]);
+	//		WP(IP::IS_SYS_SEND_LOG,text.length());
+	//		break;
+	//	}
+	//}
+
+	string text;
+	text+=GetTime();
+	text+=" [SYS] ";
+	text+=s;
+
+	bool flg;
+	std::string file = "//./pipe/mypipe";
+	std::wstring stemp = s2ws(file);
+	LPCWSTR result = stemp.c_str();
+	LPDWORD dwWrite = NULL;
+
+	while(true)
+	{
+		HANDLE hFile = CreateFile(result, GENERIC_WRITE,
+			FILE_SHARE_READ | FILE_SHARE_WRITE , NULL, OPEN_EXISTING,
+			FILE_ATTRIBUTE_NORMAL, NULL);
+		if(hFile == INVALID_HANDLE_VALUE)
+		{
+			//DWORD dw = GetLastError();
+			//printf("CreateFile failed for Named Pipe client\n:" );
+			continue;
+		}
+		else
+		{
+			flg = WriteFile(hFile, text.c_str(), text.length(), dwWrite, NULL);
+			if (FALSE == flg)  
+			{
+
+				//printf("WriteFile failed for Named Pipe client\n");  
+				continue;
+			}
+			CloseHandle(hFile);
+			break;
+		}
+	}
+}
+void msg2user(string s)
+{
+	log2ui("MSG2USER"+s);
+}
+
+
+void CheckInputSeqLegal(string sPring,int &s_nSameCaseCount, int nSeq_Target,int &nSeq_Input,int &nSeq_Now,int Seq_OK1)
+{
+	int nTemp = nSeq_Input;
+
+	if(nSeq_Input==nSeq_Target)
+	{
+		if(   nSeq_Now!=Seq_OK1 )
+		{
+			nSeq_Input = nSeq_Now;
+		}
+		else
+		{
+			nSeq_Now = nSeq_Input;
+		}
+	}
+	else
+	{
+		nSeq_Now = nSeq_Input;
+	}
+
+	if(nTemp != nSeq_Input)
+	{
+		s_nSameCaseCount = 0;
+		log2ui(sPring+p((cas)nSeq_Input));
+	}
+	else
+	{
+		s_nSameCaseCount++;
+	}
+
+}
+//void CheckInputSeqLegal(int nSeq_Target,int &nSeq_Input,int nSeq_Now,int Seq_OK1,int Seq_OK2)
+//{
+//	if(nSeq_Input==nSeq_Target)
+//	{
+//		if(   nSeq_Now!=Seq_OK1 &&
+//			nSeq_Now!=Seq_OK2 )
+//		{
+//			nSeq_Input = nSeq_Now;
+//		}
+//	}
+//}
+//void CheckInputSeqLegal(int nSeq_Target,int &nSeq_Input,int nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3)
+//{
+//	if(nSeq_Input==nSeq_Target)
+//	{
+//		if(   nSeq_Now!=Seq_OK1 &&
+//			nSeq_Now!=Seq_OK2 &&
+//			nSeq_Now!=Seq_OK3 )
+//		{
+//			nSeq_Input = nSeq_Now;
+//		}
+//	}
+//}
+//void CheckInputSeqLegal(int nSeq_Target,int &nSeq_Input,int nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3,int Seq_OK4)
+//{
+//	if(nSeq_Input==nSeq_Target)
+//	{
+//		if(   nSeq_Now!=Seq_OK1 &&
+//			nSeq_Now!=Seq_OK2 &&
+//			nSeq_Now!=Seq_OK3 &&
+//			nSeq_Now!=Seq_OK4)
+//		{
+//			nSeq_Input = nSeq_Now;
+//		}
+//	}
+//}

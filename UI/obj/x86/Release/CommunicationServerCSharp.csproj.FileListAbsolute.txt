@@ -1,0 +1,10 @@
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\bin\Release\CommunicationServerCSharp.exe
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\bin\Release\CommunicationServerCSharp.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\bin\Release\Enum.dll
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\bin\Release\Enum.pdb
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.Form1.resources
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.Properties.Resources.resources
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.csproj.GenerateResource.Cache
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.exe
+C:\Users\Gan\Desktop\加在一起\CommunicationProj\Communication\CommunicationServerCSharp\obj\x86\Release\CommunicationServerCSharp.pdb
