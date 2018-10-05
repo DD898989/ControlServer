@@ -34,7 +34,7 @@ struct MemoryPoolStruc* m_pMemPool;
 void SimulateMultiThread();
 void log2ui(string s);
 void msg2user(string s);
-void Send_CS_Cmd(IP csip,CS Send_CS_Cmd);
+bool Send_CS_Cmd(IP csip,CS Send_CS_Cmd);
 string GetTime();
 
 int M_Sequence_b2(int nSeq_State);
@@ -49,9 +49,15 @@ void M_Module_B_Complex_Cmds(int s_nSeq_Now);
 void M_Module_B_Simple_Cmds(int s_nSeq_Now);
 
 void WSP(int location,int value);
-void WP(int location,int value){m_pMemPool->value[location] = value;}
 int RSP(int location);
-int RP(int location){return  m_pMemPool->value[location];}
+void WP(int location,int value)
+{
+	m_pMemPool->value[location] = value;
+}
+int RP(int location)
+{
+	return  m_pMemPool->value[location];
+}
 
 void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1);
 void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2);

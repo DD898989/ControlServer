@@ -18,7 +18,7 @@ namespace UI
 {
     static class p  //program
     {
-        public const int MAX_LOG_SIZE = 200;  //SYS_SEND_LOG_CHAR_200 = SYS_SEND_LOG_CHAR_1 + 199,
+        // constant
         const int INT_SIZE = 4;
         const int LOG_TIME_STRING_LENGTH = 12;  //ex:  "mm:ss.sss" length = 9
 
@@ -35,35 +35,63 @@ namespace UI
         const string UI_PATH = ROOT_PATH + "Query_Static_Pool_UI_hanle";
         const string SYS_PATH = ROOT_PATH + "Query_Static_Pool_SYS_hanle";
         const string STATIC_POOL_PATH = ROOT_PATH + "Static_Pool";
-        
+
+        //control server
+        static object[] ControlServerLock = new object[(int)IP.ControlServer_End];
+        static Func<int, int>[] ServerModuleDotRecieveCommand = new Func<int, int>[(int)IP.ControlServer_End];
+        static public void CheckControlServerCommand(
+            IP CS_XXX,
+            IP CS_XXX_AutoUnlock,
+            object ServerXXXLock,
+            Func<int, int> ServerModuleDotRecieveCommand
+            )
+        {
+            CS Cmd_ = (CS)p.RP(CS_XXX);
+            if (Cmd_ > CS.CS_Basic_State_End)
+            {
+                CS Cmd = Cmd_;
+                p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Received");
+                p.WP(CS_XXX, (int)CS.CS_Lock);
+                int auto_unlock = p.RP(CS_XXX_AutoUnlock);
+                p.WP(CS_XXX_AutoUnlock, 0); //default setting: do not auto unlock
+
+                new System.Threading.Thread(() =>
+                {
+                    lock (ServerXXXLock)// make sure only one cmd for a single module at a time
+                    {
+                        p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Ready to send");
+
+                        CS Result = (CS)ServerModuleDotRecieveCommand((int)Cmd);
+                        if (Result == CS.CS_NG)
+                        {
+                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Seq_NNNNNNNNGGGGGGGG");
+                        }
+                        else if (Result == CS.CS_OK)
+                        {
+                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   OK");
+                        }
+
+                        p.WP(CS_XXX, (int)Result);
+
+                        if (auto_unlock == 1)
+                        {
+                            p.log("Auto Unlock!");
+                            p.WP(CS_XXX, (int)CS.CS_Unlock);
+                        }
+                    }
+                }).Start();
+            }
+        }
 
         //UI log
         public static void log(string s)  
         {
             while (true)
             {
-                //if (p.RP(IP.IS_SYS_SEND_LOG) == 0)
-                //{
                 Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff") + " [U I] " + s);
                     break;
-                //}
             }
         }
-
-
-        //SYS log
-        //static public string WriteSysLog(int nMsgLen) 
-        //{
-        //    char[] ary = new char[nMsgLen];
-        //    for (int i = 0; i < nMsgLen; i++)
-        //        ary[i] = Convert.ToChar(p.RP((IP)((int)IP.SYS_SEND_LOG_CHAR_1 + i)));
-        //    String text = new String(ary, 0, nMsgLen);
-        //    text = text.Substring(0, LOG_TIME_STRING_LENGTH) + "[[[SYS]]]" + text.Substring(LOG_TIME_STRING_LENGTH, text.Length - LOG_TIME_STRING_LENGTH);
-        //    Console.WriteLine(text);
-        //    p.WP(IP.IS_SYS_SEND_LOG, 0);
-        //    return text;
-        //}
-
 
         //write memory pool
         static public void WP(IP location, int nWriteData)
@@ -89,8 +117,6 @@ namespace UI
                 return BitConverter.ToInt32(_intBuf, 0);
             }
         }
-
-
 
         //write static pool
         static public void WSP(IP location, int nWriteData) 
@@ -134,13 +160,11 @@ namespace UI
             return BitConverter.ToInt32(buf, 0);
         }
 
-
-
         [STAThread]
         static void Main(string[] arg)
         {
+            #region UI start
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "UI Main()");
-
             if (arg.Length == 0) //UI is start project
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo(ROOT_PATH + "SYS.exe");
@@ -155,7 +179,14 @@ namespace UI
                     Console.Write(arg[i] + " ");
                 Console.WriteLine("");
             }
+            #endregion
 
+            #region static pool init
+            _fi_UI_handle = new FileInfo(UI_PATH);
+            _fi_SYS_handle = new FileInfo(SYS_PATH);
+            #endregion
+
+            #region memory pool init
             while (true)
             {
                 try
@@ -168,35 +199,38 @@ namespace UI
                 {
                 }
             }
+            #endregion
 
-            //while (true)
-            //{
-            //    int n = p.RP(IP.IS_SYS_SEND_LOG);
-            //    if (n > 0 && n < MAX_LOG_SIZE)
-            //    {
-            //        p.WriteSysLog(n);
-            //        Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Successed writing SYS test msg");
-            //        break;
-            //    }
-            //}
-
-            //link to handle file created by SYS
-            _fi_UI_handle = new FileInfo(UI_PATH);
-            _fi_SYS_handle = new FileInfo(SYS_PATH);
-
-            //init control server
-            for (int i = (int)IP.ControlServer_Start; i < (int)IP.ControlServer_End; i++)
-                WP((IP)i, (int)CS.CS_Unlock);
+            #region control server init
+            //-------------------------------
+            ServerModuleDotRecieveCommand[(int)IP.CS_Module_A] = Server_Module_A.RecieveCommand;
+            ServerModuleDotRecieveCommand[(int)IP.CS_Module_B] = Server_Module_B.RecieveCommand;
+            //-------------------------------
+            for (int i = 0; i < ControlServerLock.Length; i++) ControlServerLock[i] = new object();
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Finish Init Control Server");
+            new System.Threading.Thread(() =>
+            {
+                while (true)
+                {
+                    using (NamedPipeServerStream pipeStream = new NamedPipeServerStream("ControlServerCmdPipe"))
+                    {
+                        pipeStream.WaitForConnection();
+                        System.IO.BinaryReader br = new BinaryReader(pipeStream);
+                        int tmp = br.ReadInt16();
 
+                        CheckControlServerCommand(        // always loop check whether receive control server command(ModuleA、ModuleB、...)
+                        (IP)tmp,
+                        (IP)tmp + 1,
+                        ControlServerLock[tmp],
+                        ServerModuleDotRecieveCommand[tmp]
+                        );
+                    }
+                }
+            }).Start();
+            #endregion
 
-
-
-
-
-
-
-            //wait check thread
+            #region init form
+            Form1 myForm = new Form1();
             new System.Threading.Thread(() =>
             {
                 while (true)
@@ -208,23 +242,24 @@ namespace UI
                         string tmp;
                         while ((tmp = sr.ReadLine()) != null)
                         {
-                            //if(tmp.Contains("cscmd"))
-                            //    [...]
-                            //else
+                            if (!tmp.Contains("MSG2USER"))
                                 Console.WriteLine(tmp);
+                            else
+                            {
+                                string tmp_ = tmp.Replace("MSG2USER", "");
+                                Console.WriteLine(tmp_);
+                                myForm.SetText(tmp_);
+
+                            }
                         }
                     }
                 }
             }).Start();
-
-
-
-
-
-
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(myForm);
+            //Application.Run(new Form1());
+            #endregion
         }
     }
 }

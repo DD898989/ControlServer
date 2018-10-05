@@ -210,7 +210,8 @@ int M_Sequence_b2(int nSeq_Outside)
 	case cas::Call_Module_A_Cmd_5:
 		if(s_nSameCaseCount==0)
 		{
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_5);
+			if(!Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_5))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else
 		{
@@ -381,10 +382,12 @@ void M_Module_A_Simple_Cmds(int nSeq_Outside)
 			log2ui(sPrintSeq+"check server lock");
 		}
 
+
+		nTemp = RP(IP::CS_Module_A);
 		if(RP(IP::CS_Module_A)==CS::CS_Unlock)
 		{
 			log2ui(sPrintSeq+"lock server");
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_OK);
+			WP(IP::CS_Module_A,CS::CS_OK);
 			s_nSeq_Now = Call_Seq_A;
 		}
 		break;
@@ -404,9 +407,8 @@ void M_Module_A_Simple_Cmds(int nSeq_Outside)
 	case cas::Module_A_Cmd_1:
 		if(s_nSameCaseCount==0)
 		{
-			log2ui(sPrintSeq+"send cs cmd");
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_1);
-			log2ui(sPrintSeq+"wait cs cmd");
+			if(!Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_1))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else
 		{
@@ -425,9 +427,8 @@ void M_Module_A_Simple_Cmds(int nSeq_Outside)
 	case cas::Module_A_Cmd_2:
 		if(s_nSameCaseCount==0)
 		{
-			log2ui(sPrintSeq+"send cs cmd");
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_2);
-			log2ui(sPrintSeq+"wait cs cmd");
+			if(!Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_2))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else
 		{
@@ -457,7 +458,7 @@ void M_Module_A_Simple_Cmds(int nSeq_Outside)
 
 	case cas::Seq_OK:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_A,CS::CS_Unlock);
+		WP(IP::CS_Module_A,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -469,7 +470,7 @@ void M_Module_A_Simple_Cmds(int nSeq_Outside)
 
 	case cas::Seq_NNNNNNNNGGGGGGGG:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_A,CS::CS_Unlock);
+		WP(IP::CS_Module_A,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -519,7 +520,7 @@ void M_Module_A_Complex_Cmds(int nSeq_Outside)
 		if(RP(IP::CS_Module_A)==CS::CS_Unlock)
 		{
 			log2ui(sPrintSeq+"lock server");
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_OK);
+			WP(IP::CS_Module_A,CS::CS_OK);
 			s_nSeq_Now = cas::Module_A_Cmd_1;
 		}
 		break;
@@ -546,7 +547,8 @@ void M_Module_A_Complex_Cmds(int nSeq_Outside)
 		{
 			if(s_nSameCaseCount==0)
 			{
-				Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_1);
+				if(!Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_1))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 			}
 			else if(s_nSameCaseCount==1)
 			{
@@ -576,7 +578,8 @@ void M_Module_A_Complex_Cmds(int nSeq_Outside)
 	case cas::Module_A_Cmd_3:
 		if(s_nSameCaseCount==0)
 		{
-			Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_3);
+			if(!Send_CS_Cmd(IP::CS_Module_A,CS::CS_Module_A_Cmd_3))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else if(s_nSameCaseCount==1)
 		{
@@ -610,7 +613,7 @@ void M_Module_A_Complex_Cmds(int nSeq_Outside)
 
 	case cas::Seq_OK:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_A,CS::CS_Unlock);
+		WP(IP::CS_Module_A,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -622,7 +625,7 @@ void M_Module_A_Complex_Cmds(int nSeq_Outside)
 
 	case cas::Seq_NNNNNNNNGGGGGGGG:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_A,CS::CS_Unlock);
+		WP(IP::CS_Module_A,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -671,7 +674,7 @@ void M_Module_B_Complex_Cmds(int nSeq_Outside)
 			if(RP(IP::CS_Module_B)==CS::CS_Unlock)
 			{
 				log2ui(sPrintSeq+"lock server");
-				Send_CS_Cmd(IP::CS_Module_B,CS::CS_OK);
+				WP(IP::CS_Module_B,CS::CS_OK);
 				s_nSeq_Now = cas::Module_B_Cmd_1;
 			}
 		}
@@ -697,7 +700,8 @@ void M_Module_B_Complex_Cmds(int nSeq_Outside)
 		{
 			if(s_nSameCaseCount==0)
 			{
-				Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_1);
+				if(!Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_1))
+					s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 			}
 			else if(s_nSameCaseCount==1)
 			{
@@ -736,7 +740,8 @@ void M_Module_B_Complex_Cmds(int nSeq_Outside)
 	case cas::Module_B_Cmd_3:
 		if(s_nSameCaseCount==0)
 		{
-			Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_3);
+			if(!Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_3))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else if(s_nSameCaseCount==1)
 		{
@@ -758,7 +763,7 @@ void M_Module_B_Complex_Cmds(int nSeq_Outside)
 
 	case cas::Seq_OK:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_B,CS::CS_Unlock);
+		WP(IP::CS_Module_B,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -769,7 +774,7 @@ void M_Module_B_Complex_Cmds(int nSeq_Outside)
 
 	case cas::Seq_NNNNNNNNGGGGGGGG:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_B,CS::CS_Unlock);
+		WP(IP::CS_Module_B,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -817,7 +822,7 @@ void M_Module_B_Simple_Cmds(int nSeq_Outside)
 			if(RP(IP::CS_Module_B)==CS::CS_Unlock)
 			{
 				log2ui(sPrintSeq+"lock server");
-				Send_CS_Cmd(IP::CS_Module_B,CS::CS_OK);
+				WP(IP::CS_Module_B,CS::CS_OK);
 				s_nSeq_Now = cas::Module_B_Cmd_1;
 			}
 		}
@@ -826,7 +831,8 @@ void M_Module_B_Simple_Cmds(int nSeq_Outside)
 	case cas::Module_B_Cmd_1:
 		if(s_nSameCaseCount==0)
 		{
-			Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_1);
+			if(!Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_1))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else if(s_nSameCaseCount==1)
 		{
@@ -849,7 +855,8 @@ void M_Module_B_Simple_Cmds(int nSeq_Outside)
 	case cas::Module_B_Cmd_2:
 		if(s_nSameCaseCount==0)
 		{
-			Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_2);
+			if(!Send_CS_Cmd(IP::CS_Module_B,CS::CS_Module_B_Cmd_2))
+				s_nSeq_Now = cas::Seq_NNNNNNNNGGGGGGGG;
 		}
 		else if(s_nSameCaseCount==1)
 		{
@@ -872,7 +879,7 @@ void M_Module_B_Simple_Cmds(int nSeq_Outside)
 		
 	case cas::Seq_NNNNNNNNGGGGGGGG:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_B,CS::CS_Unlock);
+		WP(IP::CS_Module_B,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -883,7 +890,7 @@ void M_Module_B_Simple_Cmds(int nSeq_Outside)
 		
 	case cas::Seq_OK:
 		//---------------
-		Send_CS_Cmd(IP::CS_Module_B,CS::CS_Unlock);
+		WP(IP::CS_Module_B,CS::CS_Unlock);
 		log2ui(sPrintSeq+"unlock server");
 		//---------------
 		s_nSeq_Now = cas::Seq_Reject;
@@ -956,41 +963,38 @@ int RSP(int location)
 	return m_nResultInt;
 }
 //--------------------------------------------------------------------
-void Send_CS_Cmd(IP ip,CS Send_CS_Cmd)
+bool Send_CS_Cmd(IP ip,CS Send_CS_Cmd)
 {
-
 	WP(ip,Send_CS_Cmd);
 	int nIP=(int)ip;
+	ostringstream oss;
+	oss << nIP;
 
 	bool flg;
-	std::string filePipe = "//./pipe/ControlServerCmdPipe";
+	std::string filePipe = "//./pipe/ControlServerCmdPipe"+oss.str();
 	std::wstring stemp = s2ws(filePipe);
 	LPCWSTR result = stemp.c_str();
 	LPDWORD dwWrite = NULL;
 
-	while(true)
-	{
-		HANDLE hFile = CreateFile(result, GENERIC_WRITE,
-			FILE_SHARE_READ | FILE_SHARE_WRITE , NULL, OPEN_EXISTING,
-			FILE_ATTRIBUTE_NORMAL, NULL);
+	HANDLE hFile = CreateFile(result, GENERIC_WRITE,
+		FILE_SHARE_READ | FILE_SHARE_WRITE , NULL, OPEN_EXISTING,
+		FILE_ATTRIBUTE_NORMAL, NULL);
 
-		if(hFile == INVALID_HANDLE_VALUE)
+	if(hFile == INVALID_HANDLE_VALUE)
+	{
+		log2ui("CreateFile failed for Named Pipe client\n:" );
+		return false;
+	}
+	else
+	{
+		flg = WriteFile(hFile, &nIP, 2, dwWrite, NULL);
+		if (FALSE == flg)  
 		{
-			//DWORD dw = GetLastError();
-			//printf("CreateFile failed for Named Pipe client\n:" );
-			continue;
+			log2ui("WriteFile failed for Named Pipe client\n");  
+			return false;
 		}
-		else
-		{
-			flg = WriteFile(hFile, &nIP, 2, dwWrite, NULL);
-			if (FALSE == flg)  
-			{
-				//printf("WriteFile failed for Named Pipe client\n");  
-				continue;
-			}
-			CloseHandle(hFile);
-			break;
-		}
+		CloseHandle(hFile);
+		return true;
 	}
 }
 //--------------------------------------------------------------------

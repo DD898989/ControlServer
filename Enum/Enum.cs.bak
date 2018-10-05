@@ -6,86 +6,36 @@ namespace Enum_
 {
 #endif
 
-    namespace cas
-    {
-        public enum Method
+
+        public enum cas
         {
-            MethodFirstEnum = 1000,
-            //----------------------------------
-            MOK,
-            MNNNNNNNNGGGGGGGG,
-            MReject,
-            MStart,
-            Dispatch_9845,
-            MWait,
-            MWait1,
-            MWait2,
-            MWait3,
-            MCarHorn,
-            MWait4,
-            MWait5,
-            MWait6,
-            abcde,
-            M_call_seq,
-            M_call_seq1,
-            M_call_seq2,
-            call_MStart,
-            btn_MStart,
-            btn_MStop,
-            M_CNS
+            Seq_Reject = 0, //Seq_Reject must be 0
+            Seq_OK,
+            Seq_NNNNNNNNGGGGGGGG,
+            Seq_Start,
+            Seq_Dispatch,
+            Call_NG_Seq,
+            Wait_1,
+            Wait_2,
+            Wait_3,
+            Call_Module_A_Cmd_5,
+            Call_Seq_B,
+            Call_Seq_b1,
+            Call_Seq_b2,
+            Call_Seq_A,
+            Module_A_Cmd_1,
+            Module_A_Cmd_2,
+            Module_A_Cmd_3,
+            Turn_1,
+            Turn_2,
+            Turn_3,
+            Turn_4,
+            Module_B_Cmd_1,
+            Module_B_Cmd_2,
+            Module_B_Cmd_3,
         };
 
-        public enum CarBase
-        {
-            CarBaseFirstEnum = 500,
-            //----------------------------------
-            Car_Forward3M,
-            Car_Backward3M,
-            Car_TurnRight,
-        };
 
-        namespace Car
-        {
-            public enum ForwardThenBackward
-            {
-                dummy_ForwardThenBackward,
-            };
-            public enum CircleBlock
-            {
-                dummy_CircleBlock,
-                TurnToEast,
-                TurnToSouth,
-                TurnToWest,
-                TurnToNorth,
-            };
-        }
-
-        public enum PlaneBase
-        {
-            PlaneBaseFirstEnum = 500,
-            //----------------------------------
-            Plane_Forward3M,
-            Plane_Backward3M,
-            Plane_TurnRight,
-        };
-
-        namespace Plane
-        {
-            public enum ForwardThenBackward
-            {
-                dummy_ForwardThenBackward,
-            };
-            public enum CircleBlock
-            {
-                dummy_CircleBlock,
-                TurnToEast,
-                TurnToSouth,
-                TurnToWest,
-                TurnToNorth,
-            };
-        }
-
-    }
 
     public enum AllSequences
     {
@@ -95,7 +45,7 @@ namespace Enum_
     {
         CS_Basic_State_Start = -1,
         //-------------------------------------
-        CS_Unlock = 0,   //better equl to zero
+        CS_Unlock = 0,   //must be zero
         CS_OK,
         CS_NG,
         CS_Lock,
@@ -107,18 +57,13 @@ namespace Enum_
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
-        CS_Car_Cmd_Start_Line,
         //-------------------------------------
-        CS_Car_Forward3M,
-        CS_Car_Backward3M,
-        CS_Car_Stop,
-        CS_Car_TurnRight,
-        CS_Car_TurnLeft,
-        CS_Car_Horn,
-        CS_Car_Clockwise,
-        CS_Car_Counterclockwise,
-        //-------------------------------------
-        CS_Car_Cmd_End_Line,
+        CS_Module_A_Cmd_1,
+        CS_Module_A_Cmd_2,
+        CS_Module_A_Cmd_3,
+        CS_Module_A_Cmd_4,
+        CS_Module_A_Cmd_5,
+        CS_Module_A_Cmd_6,
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
@@ -127,18 +72,15 @@ namespace Enum_
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
-        CS_Plane_Cmd_Start_Line,
         //-------------------------------------
-        CS_Plane_Forward3M,
-        CS_Plane_Backward3M,
-        CS_Plane_Stop,
-        CS_Plane_TurnRight,
-        CS_Plane_TurnLeft,
-        CS_Plane_Horn,
-        CS_Plane_Clockwise,
-        CS_Plane_Counterclockwise,
         //-------------------------------------
-        CS_Plane_Cmd_End_Line,
+        CS_Module_B_Cmd_1,
+        CS_Module_B_Cmd_2,
+        CS_Module_B_Cmd_3,
+        CS_Module_B_Cmd_4,
+        CS_Module_B_Cmd_5,
+        CS_Module_B_Cmd_6,
+        //-------------------------------------
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
@@ -154,6 +96,17 @@ namespace Enum_
         INTEGER_DATA_POOL_SIZE = 10000,
         //-----------------------------------------
         IntegerDataPoolMinBoundary = 0,
+        //---------------------------------------
+        ControlServer_Start = 1,
+        //---------------------------------------
+        CS_Module_A,
+        CS_Module_A_AutoUnlock,
+        //---------------------------------------
+        CS_Module_B,
+        CS_Module_B_AutoUnlock,
+        //---------------------------------------
+        ControlServer_End,
+        //---------------------------------------
         //-----------------------------------------
         //-----------------------------------------
         //-----------------------------------------
@@ -162,42 +115,17 @@ namespace Enum_
         //-----------------------------------------
         Sys_Method_Start,
         //---------------------------------------
-        Sys_M_Car_ForwardThenBackward,
-        Sys_M_Car_CircleBlock,
+        Sys_M_Module_A_Simple_Cmds,
+        Sys_M_Module_A_Complex_Cmds,
         //---------------------------------------
-        Sys_M_Plane_ForwardThenBackward,
-        Sys_M_Plane_CircleBlock,
+        Sys_M_Module_B_Simple_Cmds,
+        Sys_M_Module_B_Complex_Cmds,
         //---------------------------------------
         Sys_Method_End,
         //---------------------------------------
         //---------------------------------------
         //---------------------------------------
         //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        ControlServer_Start,
-        //---------------------------------------
-        CS_Car,
-        CS_Car_AutoUnlock,
-        //---------------------------------------
-        CS_Plane,
-        CS_Plane_AutoUnlock,
-        //---------------------------------------
-        ControlServer_End,
-        //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        IS_SYS_SEND_LOG,
-        IS_SYS_SEND_LOG_TO_USER,
-        SYS_SEND_LOG_CHAR_1,
-        SYS_SEND_LOG_CHAR_200 = SYS_SEND_LOG_CHAR_1 + 199, //const int MAX_LOG_SIZE = 200;
-        //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        //---------------------------------------
-        //-----------------------------------------
         //-----------------------------------------
         //-----------------------------------------
         //-----------------------------------------

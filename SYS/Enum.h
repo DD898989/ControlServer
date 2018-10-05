@@ -52,7 +52,6 @@ inline const char* p(CS v)
         case CS::CS_OK:  return "CS::CS_OK";
         case CS::CS_NG:  return "CS::CS_NG";
         case CS::CS_Lock:  return "CS::CS_Lock";
-        case CS::CS_Basic_State_End:  return "CS::CS_Basic_State_End";
         case CS::CS_Module_A_Cmd_1:  return "CS::CS_Module_A_Cmd_1";
         case CS::CS_Module_A_Cmd_2:  return "CS::CS_Module_A_Cmd_2";
         case CS::CS_Module_A_Cmd_3:  return "CS::CS_Module_A_Cmd_3";
@@ -65,7 +64,6 @@ inline const char* p(CS v)
         case CS::CS_Module_B_Cmd_4:  return "CS::CS_Module_B_Cmd_4";
         case CS::CS_Module_B_Cmd_5:  return "CS::CS_Module_B_Cmd_5";
         case CS::CS_Module_B_Cmd_6:  return "CS::CS_Module_B_Cmd_6";
-        case CS::CS_Basic_State_Start:  return "CS::CS_Basic_State_Start";
 		default:
 			return "ERROR: WRONG CASE IN Enum.h";
     }

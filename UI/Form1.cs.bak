@@ -12,63 +12,17 @@ using Enum_;
 using System.Threading;
 using System.Diagnostics;
 
-
 namespace UI
 {
     public partial class Form1 : Form
     {
-        static object ServerCarLock = new object();
-        static object ServerPlaneLock = new object();
-
         public Form1()
         {
             InitializeComponent();
-
-
-
-
-            //loop check thread
-            new System.Threading.Thread(() =>
-            {
-                while (true)
-                {
-                    //WriteSysLog();                    // always loop check whether receive SYS send log
-
-                    CheckControlServerCommand(        // always loop check whether receive control server command(ModuleA、ModuleB、...)
-                        IP.CS_Plane,
-                        IP.CS_Plane_AutoUnlock,
-                        ServerPlaneLock,
-                        ServerPlane.RecieveCommand
-                        );
-
-                    CheckControlServerCommand(        // always loop check whether receive control server command(ModuleA、ModuleB、...)
-                        IP.CS_Car,
-                        IP.CS_Car_AutoUnlock,
-                        ServerCarLock,
-                        ServerCar.RecieveCommand
-                        );
-                }
-            }).Start();
         }
 
-        //void WriteSysLog()
-        //{
-        //    int nMsgLen = p.RP(IP.IS_SYS_SEND_LOG);
-        //    string sLogToUser = "";
-        //    if (nMsgLen > 0 && nMsgLen < p.MAX_LOG_SIZE)
-        //    {
-        //        sLogToUser = p.WriteSysLog(nMsgLen);
-
-        //        if (p.RP(IP.IS_SYS_SEND_LOG_TO_USER) == 1)
-        //        {
-        //            SetText(sLogToUser);
-        //            p.WP(IP.IS_SYS_SEND_LOG_TO_USER, 0);
-        //        }
-        //    }
-        //}
-
         delegate void StringArgReturningVoidDelegate(string text);
-        private void SetText(string text)
+        public void SetText(string text)
         {
             if (this.textBox1.InvokeRequired)
             {
@@ -81,73 +35,28 @@ namespace UI
             }
         }
 
-
-        public void CheckControlServerCommand(
-            IP CS_XXX,
-            IP CS_XXX_AutoUnlock,
-            object ServerXXXLock,
-            Func<int, int> ClassDotRecieveCommand
-            )
-        {
-            CS Cmd_ = (CS)p.RP(CS_XXX);
-            if (Cmd_ > CS.CS_Basic_State_End)
-            {
-                CS Cmd = Cmd_;
-                p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Received");
-                p.WP(CS_XXX, (int)CS.CS_Lock);
-                int auto_unlock = p.RP(CS_XXX_AutoUnlock);
-                p.WP(CS_XXX_AutoUnlock, 0); //default setting: do not auto unlock
-
-                new System.Threading.Thread(() =>
-                {
-                    lock (ServerXXXLock)// make sure only one cmd for a single module at a time
-                    {
-                        p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Ready to send");
-
-                        CS Result = (CS)ClassDotRecieveCommand((int)Cmd);
-                        if (Result == CS.CS_NG)
-                        {
-                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   MNNNNNNNNGGGGGGGG");
-                        }
-                        else if (Result == CS.CS_OK)
-                        {
-                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   OK");
-                        }
-
-                        p.WP(CS_XXX, (int)Result);
-
-                        if (auto_unlock == 1)
-                        {
-                            p.log("Auto Unlock!");
-                            p.WP(CS_XXX, (int)CS.CS_Unlock);
-                        }
-                    }
-                }).Start();
-            }
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             p.log("button clicked");
-            p.WP(IP.Sys_M_Car_ForwardThenBackward, (int)Enum_.cas.Method.btn_MStart);
+            p.WP(IP.Sys_M_Module_A_Simple_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             p.log("button clicked");
-            p.WP(IP.Sys_M_Car_CircleBlock, (int)Enum_.cas.Method.btn_MStart);
+            p.WP(IP.Sys_M_Module_A_Complex_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             p.log("button clicked");
-            p.WP(IP.Sys_M_Plane_ForwardThenBackward, (int)Enum_.cas.Method.btn_MStart);
+            p.WP(IP.Sys_M_Module_B_Simple_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             p.log("button clicked");
-            p.WP(IP.Sys_M_Plane_CircleBlock, (int)Enum_.cas.Method.btn_MStart);
+            p.WP(IP.Sys_M_Module_B_Complex_Cmds, (int)Enum_.cas.Seq_Start);
         }
     }
 }

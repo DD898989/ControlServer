@@ -97,7 +97,7 @@ namespace Enum_
         //-----------------------------------------
         IntegerDataPoolMinBoundary = 0,
         //---------------------------------------
-        ControlServer_Start = 1,
+        ControlServer_Start = 1, //must be one
         //---------------------------------------
         CS_Module_A,
         CS_Module_A_AutoUnlock,

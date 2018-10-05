@@ -20,7 +20,7 @@ namespace UI
     {
         // constant
         const int INT_SIZE = 4;
-        const int LOG_TIME_STRING_LENGTH = 12;  //ex:  "mm:ss.sss" length = 9
+        const int DOUBLE_SIZE = 8;
 
         //memory pool
         static private object _lockMemoryPool = new object();
@@ -39,52 +39,46 @@ namespace UI
         //control server
         static object[] ControlServerLock = new object[(int)IP.ControlServer_End];
         static Func<int, int>[] ServerModuleDotRecieveCommand = new Func<int, int>[(int)IP.ControlServer_End];
-        static public void CheckControlServerCommand(
+        static public CS CheckControlServerCommand(
             IP CS_XXX,
-            IP CS_XXX_AutoUnlock,
-            object ServerXXXLock,
+            //IP CS_XXX_AutoUnlock,
+            //object ServerXXXLock,
             Func<int, int> ServerModuleDotRecieveCommand
             )
         {
-            CS Cmd_ = (CS)p.RP(CS_XXX);
-            if (Cmd_ > CS.CS_Basic_State_End)
-            {
+            CS Result = CS.CS_NG;
+            //lock (ServerXXXLock) //make sure only one cmd for control server at a time
+            //{
+                CS Cmd_ = (CS)p.RP(CS_XXX);
                 CS Cmd = Cmd_;
-                p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Received");
-                p.WP(CS_XXX, (int)CS.CS_Lock);
-                int auto_unlock = p.RP(CS_XXX_AutoUnlock);
-                p.WP(CS_XXX_AutoUnlock, 0); //default setting: do not auto unlock
-
-                new System.Threading.Thread(() =>
+                if (Cmd_ < CS.CS_Basic_State_End) 
                 {
-                    lock (ServerXXXLock)// make sure only one cmd for a single module at a time
+                    p.log("Server: " + CS_XXX + " received illegal command:  " + Cmd);
+                }
+                else 
+                {
+                    p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Received, lock server");
+                    p.WP(CS_XXX, (int)CS.CS_Lock);
+
+                    p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Ready to send");
+
+                    Result = (CS)ServerModuleDotRecieveCommand((int)Cmd);
+                    if (Result == CS.CS_NG)
                     {
-                        p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Ready to send");
-
-                        CS Result = (CS)ServerModuleDotRecieveCommand((int)Cmd);
-                        if (Result == CS.CS_NG)
-                        {
-                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Seq_NNNNNNNNGGGGGGGG");
-                        }
-                        else if (Result == CS.CS_OK)
-                        {
-                            p.log("Server: " + CS_XXX + " command:  " + Cmd + "   OK");
-                        }
-
-                        p.WP(CS_XXX, (int)Result);
-
-                        if (auto_unlock == 1)
-                        {
-                            p.log("Auto Unlock!");
-                            p.WP(CS_XXX, (int)CS.CS_Unlock);
-                        }
+                        p.log("Server: " + CS_XXX + " command:  " + Cmd + "   Seq_NNNNNNNNGGGGGGGG");
                     }
-                }).Start();
-            }
+                    else if (Result == CS.CS_OK)
+                    {
+                        p.log("Server: " + CS_XXX + " command:  " + Cmd + "   OK");
+                    }
+
+                }
+            //}
+            return Result;
         }
 
         //UI log
-        public static void log(string s)  
+        public static void log(string s)
         {
             while (true)
             {
@@ -208,25 +202,50 @@ namespace UI
             //-------------------------------
             for (int i = 0; i < ControlServerLock.Length; i++) ControlServerLock[i] = new object();
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Finish Init Control Server");
+
             new System.Threading.Thread(() =>
             {
+                int cs_id = (int)IP.CS_Module_A;
+                CS cs_state = CS.CS_Unlock;
                 while (true)
                 {
-                    using (NamedPipeServerStream pipeStream = new NamedPipeServerStream("ControlServerCmdPipe"))
+                    string temp = "ControlServerCmdPipe" + cs_id;
+                    using (NamedPipeServerStream pipeStream = new NamedPipeServerStream(temp))
                     {
+                        p.WP((IP)cs_id, (int)cs_state);
+                        if (p.RP((IP)(cs_id + 1)) == 1){  p.log("Auto Unlock!");   p.WP((IP)cs_id, (int)CS.CS_Unlock);  }
                         pipeStream.WaitForConnection();
                         System.IO.BinaryReader br = new BinaryReader(pipeStream);
-                        int tmp = br.ReadInt16();
-
-                        CheckControlServerCommand(        // always loop check whether receive control server command(ModuleA、ModuleB、...)
-                        (IP)tmp,
-                        (IP)tmp + 1,
-                        ControlServerLock[tmp],
-                        ServerModuleDotRecieveCommand[tmp]
+                        cs_id = br.ReadInt16();
+                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]
                         );
                     }
                 }
             }).Start();
+
+
+
+            new System.Threading.Thread(() =>
+            {
+                int cs_id = (int)IP.CS_Module_B;
+                CS cs_state = CS.CS_Unlock;
+                while (true)
+                {
+                    string temp = "ControlServerCmdPipe" + cs_id;
+                    using (NamedPipeServerStream pipeStream = new NamedPipeServerStream(temp))
+                    {
+                        p.WP((IP)cs_id, (int)cs_state);
+                        if (p.RP((IP)(cs_id + 1)) == 1) { p.log("Auto Unlock!"); p.WP((IP)cs_id, (int)CS.CS_Unlock); }
+                        pipeStream.WaitForConnection();
+                        System.IO.BinaryReader br = new BinaryReader(pipeStream);
+                        cs_id = br.ReadInt16();
+                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]
+                        );
+                    }
+                }
+            }).Start();
+
+
             #endregion
 
             #region init form
