@@ -1,9 +1,5 @@
-﻿Build started 2018/9/29 下午 10:50:38.
-     1>Project "C:\Users\Gan\Desktop\2018 0928 1902 MyMPI\MyMPI\201808231800Interview\CommunicationProj\SYS\CommunicationServerCpp.vcxproj" on node 2 (clean target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\SYS.lastbuildstate".
-     1>Done Building Project "C:\Users\Gan\Desktop\2018 0928 1902 MyMPI\MyMPI\201808231800Interview\CommunicationProj\SYS\CommunicationServerCpp.vcxproj" (clean target(s)).
+﻿Build started 2018/10/5 下午 02:24:04.
 
 Build succeeded.
 
-Time Elapsed 00:00:01.09
+Time Elapsed 00:00:00.06
