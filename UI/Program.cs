@@ -37,7 +37,6 @@ namespace UI
         const string STATIC_POOL_PATH = ROOT_PATH + "Static_Pool";
 
         //control server
-        static object[] ControlServerLock = new object[(int)IP.ControlServer_End];
         static Func<int, int>[] ServerModuleDotRecieveCommand = new Func<int, int>[(int)IP.ControlServer_End];
         static public CS CheckControlServerCommand(
             IP CS_XXX,
@@ -200,13 +199,12 @@ namespace UI
             ServerModuleDotRecieveCommand[(int)IP.CS_Module_A] = Server_Module_A.RecieveCommand;
             ServerModuleDotRecieveCommand[(int)IP.CS_Module_B] = Server_Module_B.RecieveCommand;
             //-------------------------------
-            for (int i = 0; i < ControlServerLock.Length; i++) ControlServerLock[i] = new object();
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Finish Init Control Server");
 
             new System.Threading.Thread(() =>
             {
                 int cs_id = (int)IP.CS_Module_A;
-                CS cs_state = CS.CS_Unlock;
+                CS cs_state = CS.CS_Unlock; //default state, only first time set once to Unlock
                 while (true)
                 {
                     string temp = "ControlServerCmdPipe" + cs_id;
@@ -217,8 +215,7 @@ namespace UI
                         pipeStream.WaitForConnection();
                         System.IO.BinaryReader br = new BinaryReader(pipeStream);
                         cs_id = br.ReadInt16();
-                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]
-                        );
+                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]);
                     }
                 }
             }).Start();
@@ -228,7 +225,7 @@ namespace UI
             new System.Threading.Thread(() =>
             {
                 int cs_id = (int)IP.CS_Module_B;
-                CS cs_state = CS.CS_Unlock;
+                CS cs_state = CS.CS_Unlock; //default state, only first time set once to Unlock
                 while (true)
                 {
                     string temp = "ControlServerCmdPipe" + cs_id;
@@ -239,8 +236,7 @@ namespace UI
                         pipeStream.WaitForConnection();
                         System.IO.BinaryReader br = new BinaryReader(pipeStream);
                         cs_id = br.ReadInt16();
-                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]
-                        );
+                        cs_state = CheckControlServerCommand((IP)cs_id,/*(IP)cs_id + 1,ControlServerLock[cs_id],*/ServerModuleDotRecieveCommand[cs_id]);
                     }
                 }
             }).Start();
