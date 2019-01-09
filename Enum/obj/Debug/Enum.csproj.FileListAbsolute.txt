@@ -145,3 +145,7 @@ C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj
 C:\Users\dave.gan\Desktop\【終極正式可是b1只有start】CommunicationProj\Enum\obj\Debug\Enum.pdb
 D:\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.dll
 D:\MyMPI\201808231800Interview\CommunicationProj\Enum\obj\Debug\Enum.pdb
+D:\ControlServer\Enum.dll
+D:\ControlServer\Enum.pdb
+C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum\obj\Debug\Enum.dll
+C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum\obj\Debug\Enum.pdb

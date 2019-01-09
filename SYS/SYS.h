@@ -37,16 +37,16 @@ void msg2user(string s);
 bool Send_CS_Cmd(IP csip,CS Send_CS_Cmd);
 string GetTime();
 
-int M_Sequence_b2(int nSeq_State);
-int M_Sequence_b1(int nSeq_State);
-int M_Sequence_B(int nSeq_State);
-int M_Sequence_A(int nSeq_State);
-int M_Sequence_NG(int nSeq_State);
+int SubSeq_b2(int nSeq_State);
+int SubSeq_b1(int nSeq_State);
+int SubSeq_B(int nSeq_State);
+int SubSeq_A(int nSeq_State);
+int SubSeq_NG(int nSeq_State);
 
-void M_Module_A_Complex_Cmds(int s_nSeq_Now);
-void M_Module_A_Simple_Cmds(int s_nSeq_Now);
-void M_Module_B_Complex_Cmds(int s_nSeq_Now);
-void M_Module_B_Simple_Cmds(int s_nSeq_Now);
+void ParentSeq_ModA_Complex_Cmds(int s_nSeq_Now);
+void ParentSeq_ModA_Simple_Cmds(int s_nSeq_Now);
+void ParentSeq_ModB_Complex_Cmds(int s_nSeq_Now);
+void ParentSeq_ModB_Simple_Cmds(int s_nSeq_Now);
 
 void WSP(int location,int value);
 int RSP(int location);
@@ -59,10 +59,10 @@ int RP(int location)
 	return  m_pMemPool->value[location];
 }
 
-void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1);
-void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2);
-void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3);
-void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_Outside,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3,int Seq_OK4);
+void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_External,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1);
+void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_External,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2);
+void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_External,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3);
+void CaseChecker(string sPrint,int &s_nSameCaseCount,int &nSeq_Temp,int &nSeq_Pre,  int &nSeq_External,int nSeq_Target,int &s_nSeq_Now,int Seq_OK1,int Seq_OK2,int Seq_OK3,int Seq_OK4);
 
 std::wstring s2ws(const std::string& s)
 {

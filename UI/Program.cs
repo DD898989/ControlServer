@@ -196,14 +196,14 @@ namespace UI
 
             #region control server init
             //-------------------------------
-            ServerModuleDotRecieveCommand[(int)IP.CS_Module_A] = Server_Module_A.RecieveCommand;
-            ServerModuleDotRecieveCommand[(int)IP.CS_Module_B] = Server_Module_B.RecieveCommand;
+            ServerModuleDotRecieveCommand[(int)IP.CS_ModA] = Server_ModA.RecieveCommand;
+            ServerModuleDotRecieveCommand[(int)IP.CS_ModB] = Server_ModB.RecieveCommand;
             //-------------------------------
             Console.WriteLine(DateTime.Now.ToString("HH:mm:ss.fff  ") + "Finish Init Control Server");
 
             new System.Threading.Thread(() =>
             {
-                int cs_id = (int)IP.CS_Module_A;
+                int cs_id = (int)IP.CS_ModA;
                 CS cs_state = CS.CS_Unlock; //default state, only first time set once to Unlock
                 while (true)
                 {
@@ -224,7 +224,7 @@ namespace UI
 
             new System.Threading.Thread(() =>
             {
-                int cs_id = (int)IP.CS_Module_B;
+                int cs_id = (int)IP.CS_ModB;
                 CS cs_state = CS.CS_Unlock; //default state, only first time set once to Unlock
                 while (true)
                 {

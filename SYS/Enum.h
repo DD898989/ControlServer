@@ -24,21 +24,21 @@ inline const char* p(cas v)
         case cas::Wait_1:  return "cas::Wait_1";
         case cas::Wait_2:  return "cas::Wait_2";
         case cas::Wait_3:  return "cas::Wait_3";
-        case cas::Call_Module_A_Cmd_5:  return "cas::Call_Module_A_Cmd_5";
+        case cas::Call_ModA_Cmd_5:  return "cas::Call_ModA_Cmd_5";
         case cas::Call_Seq_B:  return "cas::Call_Seq_B";
         case cas::Call_Seq_b1:  return "cas::Call_Seq_b1";
         case cas::Call_Seq_b2:  return "cas::Call_Seq_b2";
         case cas::Call_Seq_A:  return "cas::Call_Seq_A";
-        case cas::Module_A_Cmd_1:  return "cas::Module_A_Cmd_1";
-        case cas::Module_A_Cmd_2:  return "cas::Module_A_Cmd_2";
-        case cas::Module_A_Cmd_3:  return "cas::Module_A_Cmd_3";
+        case cas::ModA_Cmd_1:  return "cas::ModA_Cmd_1";
+        case cas::ModA_Cmd_2:  return "cas::ModA_Cmd_2";
+        case cas::ModA_Cmd_3:  return "cas::ModA_Cmd_3";
         case cas::Turn_1:  return "cas::Turn_1";
         case cas::Turn_2:  return "cas::Turn_2";
         case cas::Turn_3:  return "cas::Turn_3";
         case cas::Turn_4:  return "cas::Turn_4";
-        case cas::Module_B_Cmd_1:  return "cas::Module_B_Cmd_1";
-        case cas::Module_B_Cmd_2:  return "cas::Module_B_Cmd_2";
-        case cas::Module_B_Cmd_3:  return "cas::Module_B_Cmd_3";
+        case cas::ModB_Cmd_1:  return "cas::ModB_Cmd_1";
+        case cas::ModB_Cmd_2:  return "cas::ModB_Cmd_2";
+        case cas::ModB_Cmd_3:  return "cas::ModB_Cmd_3";
 		default:
 			return "ERROR: WRONG CASE IN Enum.h";
     }
@@ -52,18 +52,18 @@ inline const char* p(CS v)
         case CS::CS_OK:  return "CS::CS_OK";
         case CS::CS_NG:  return "CS::CS_NG";
         case CS::CS_Lock:  return "CS::CS_Lock";
-        case CS::CS_Module_A_Cmd_1:  return "CS::CS_Module_A_Cmd_1";
-        case CS::CS_Module_A_Cmd_2:  return "CS::CS_Module_A_Cmd_2";
-        case CS::CS_Module_A_Cmd_3:  return "CS::CS_Module_A_Cmd_3";
-        case CS::CS_Module_A_Cmd_4:  return "CS::CS_Module_A_Cmd_4";
-        case CS::CS_Module_A_Cmd_5:  return "CS::CS_Module_A_Cmd_5";
-        case CS::CS_Module_A_Cmd_6:  return "CS::CS_Module_A_Cmd_6";
-        case CS::CS_Module_B_Cmd_1:  return "CS::CS_Module_B_Cmd_1";
-        case CS::CS_Module_B_Cmd_2:  return "CS::CS_Module_B_Cmd_2";
-        case CS::CS_Module_B_Cmd_3:  return "CS::CS_Module_B_Cmd_3";
-        case CS::CS_Module_B_Cmd_4:  return "CS::CS_Module_B_Cmd_4";
-        case CS::CS_Module_B_Cmd_5:  return "CS::CS_Module_B_Cmd_5";
-        case CS::CS_Module_B_Cmd_6:  return "CS::CS_Module_B_Cmd_6";
+        case CS::CS_ModA_Cmd_1:  return "CS::CS_ModA_Cmd_1";
+        case CS::CS_ModA_Cmd_2:  return "CS::CS_ModA_Cmd_2";
+        case CS::CS_ModA_Cmd_3:  return "CS::CS_ModA_Cmd_3";
+        case CS::CS_ModA_Cmd_4:  return "CS::CS_ModA_Cmd_4";
+        case CS::CS_ModA_Cmd_5:  return "CS::CS_ModA_Cmd_5";
+        case CS::CS_ModA_Cmd_6:  return "CS::CS_ModA_Cmd_6";
+        case CS::CS_ModB_Cmd_1:  return "CS::CS_ModB_Cmd_1";
+        case CS::CS_ModB_Cmd_2:  return "CS::CS_ModB_Cmd_2";
+        case CS::CS_ModB_Cmd_3:  return "CS::CS_ModB_Cmd_3";
+        case CS::CS_ModB_Cmd_4:  return "CS::CS_ModB_Cmd_4";
+        case CS::CS_ModB_Cmd_5:  return "CS::CS_ModB_Cmd_5";
+        case CS::CS_ModB_Cmd_6:  return "CS::CS_ModB_Cmd_6";
 		default:
 			return "ERROR: WRONG CASE IN Enum.h";
     }
@@ -75,16 +75,16 @@ inline const char* p(IP v)
     {
         case IP::IntegerDataPoolMinBoundary:  return "IP::IntegerDataPoolMinBoundary";
         case IP::ControlServer_Start:  return "IP::ControlServer_Start";
-        case IP::CS_Module_A:  return "IP::CS_Module_A";
-        case IP::CS_Module_A_AutoUnlock:  return "IP::CS_Module_A_AutoUnlock";
-        case IP::CS_Module_B:  return "IP::CS_Module_B";
-        case IP::CS_Module_B_AutoUnlock:  return "IP::CS_Module_B_AutoUnlock";
+        case IP::CS_ModA:  return "IP::CS_ModA";
+        case IP::CS_ModA_AutoUnlock:  return "IP::CS_ModA_AutoUnlock";
+        case IP::CS_ModB:  return "IP::CS_ModB";
+        case IP::CS_ModB_AutoUnlock:  return "IP::CS_ModB_AutoUnlock";
         case IP::ControlServer_End:  return "IP::ControlServer_End";
         case IP::Sys_Method_Start:  return "IP::Sys_Method_Start";
-        case IP::Sys_M_Module_A_Simple_Cmds:  return "IP::Sys_M_Module_A_Simple_Cmds";
-        case IP::Sys_M_Module_A_Complex_Cmds:  return "IP::Sys_M_Module_A_Complex_Cmds";
-        case IP::Sys_M_Module_B_Simple_Cmds:  return "IP::Sys_M_Module_B_Simple_Cmds";
-        case IP::Sys_M_Module_B_Complex_Cmds:  return "IP::Sys_M_Module_B_Complex_Cmds";
+        case IP::Sys_ParentSeq_ModA_Simple_Cmds:  return "IP::Sys_ParentSeq_ModA_Simple_Cmds";
+        case IP::Sys_ParentSeq_ModA_Complex_Cmds:  return "IP::Sys_ParentSeq_ModA_Complex_Cmds";
+        case IP::Sys_ParentSeq_ModB_Simple_Cmds:  return "IP::Sys_ParentSeq_ModB_Simple_Cmds";
+        case IP::Sys_ParentSeq_ModB_Complex_Cmds:  return "IP::Sys_ParentSeq_ModB_Complex_Cmds";
         case IP::Sys_Method_End:  return "IP::Sys_Method_End";
         case IP::IntegerDataPoolMaxBoundary:  return "IP::IntegerDataPoolMaxBoundary";
         case IP::INTEGER_DATA_POOL_SIZE:  return "IP::INTEGER_DATA_POOL_SIZE";

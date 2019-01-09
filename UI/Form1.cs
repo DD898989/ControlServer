@@ -38,25 +38,25 @@ namespace UI
         private void button5_Click(object sender, EventArgs e)
         {
             p.log("module a seq 1 button clicked");
-            p.WP(IP.Sys_M_Module_A_Simple_Cmds, (int)Enum_.cas.Seq_Start);
+            p.WP(IP.Sys_ParentSeq_ModA_Simple_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             p.log("module a seq 2 button clicked");
-            p.WP(IP.Sys_M_Module_A_Complex_Cmds, (int)Enum_.cas.Seq_Start);
+            p.WP(IP.Sys_ParentSeq_ModA_Complex_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             p.log("module b seq 1 button clicked");
-            p.WP(IP.Sys_M_Module_B_Simple_Cmds, (int)Enum_.cas.Seq_Start);
+            p.WP(IP.Sys_ParentSeq_ModB_Simple_Cmds, (int)Enum_.cas.Seq_Start);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             p.log("module b seq 2 button clicked");
-            p.WP(IP.Sys_M_Module_B_Complex_Cmds, (int)Enum_.cas.Seq_Start);
+            p.WP(IP.Sys_ParentSeq_ModB_Complex_Cmds, (int)Enum_.cas.Seq_Start);
         }
     }
 }

@@ -18,21 +18,21 @@ namespace Enum_
             Wait_1,
             Wait_2,
             Wait_3,
-            Call_Module_A_Cmd_5,
+            Call_ModA_Cmd_5,
             Call_Seq_B,
             Call_Seq_b1,
             Call_Seq_b2,
             Call_Seq_A,
-            Module_A_Cmd_1,
-            Module_A_Cmd_2,
-            Module_A_Cmd_3,
+            ModA_Cmd_1,
+            ModA_Cmd_2,
+            ModA_Cmd_3,
             Turn_1,
             Turn_2,
             Turn_3,
             Turn_4,
-            Module_B_Cmd_1,
-            Module_B_Cmd_2,
-            Module_B_Cmd_3,
+            ModB_Cmd_1,
+            ModB_Cmd_2,
+            ModB_Cmd_3,
         };
 
 
@@ -58,12 +58,12 @@ namespace Enum_
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
-        CS_Module_A_Cmd_1,
-        CS_Module_A_Cmd_2,
-        CS_Module_A_Cmd_3,
-        CS_Module_A_Cmd_4,
-        CS_Module_A_Cmd_5,
-        CS_Module_A_Cmd_6,
+        CS_ModA_Cmd_1,
+        CS_ModA_Cmd_2,
+        CS_ModA_Cmd_3,
+        CS_ModA_Cmd_4,
+        CS_ModA_Cmd_5,
+        CS_ModA_Cmd_6,
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
@@ -74,12 +74,12 @@ namespace Enum_
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
-        CS_Module_B_Cmd_1,
-        CS_Module_B_Cmd_2,
-        CS_Module_B_Cmd_3,
-        CS_Module_B_Cmd_4,
-        CS_Module_B_Cmd_5,
-        CS_Module_B_Cmd_6,
+        CS_ModB_Cmd_1,
+        CS_ModB_Cmd_2,
+        CS_ModB_Cmd_3,
+        CS_ModB_Cmd_4,
+        CS_ModB_Cmd_5,
+        CS_ModB_Cmd_6,
         //-------------------------------------
         //-------------------------------------
         //-------------------------------------
@@ -99,11 +99,11 @@ namespace Enum_
         //---------------------------------------
         ControlServer_Start = 1, //must be one
         //---------------------------------------
-        CS_Module_A,
-        CS_Module_A_AutoUnlock,
+        CS_ModA,
+        CS_ModA_AutoUnlock,
         //---------------------------------------
-        CS_Module_B,
-        CS_Module_B_AutoUnlock,
+        CS_ModB,
+        CS_ModB_AutoUnlock,
         //---------------------------------------
         ControlServer_End,
         //---------------------------------------
@@ -115,11 +115,11 @@ namespace Enum_
         //-----------------------------------------
         Sys_Method_Start,
         //---------------------------------------
-        Sys_M_Module_A_Simple_Cmds,
-        Sys_M_Module_A_Complex_Cmds,
+        Sys_ParentSeq_ModA_Simple_Cmds,
+        Sys_ParentSeq_ModA_Complex_Cmds,
         //---------------------------------------
-        Sys_M_Module_B_Simple_Cmds,
-        Sys_M_Module_B_Complex_Cmds,
+        Sys_ParentSeq_ModB_Simple_Cmds,
+        Sys_ParentSeq_ModB_Complex_Cmds,
         //---------------------------------------
         Sys_Method_End,
         //---------------------------------------

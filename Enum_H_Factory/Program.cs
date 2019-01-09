@@ -18,12 +18,12 @@ namespace Enum_H_Factory
                 sAllText += "\n\n\n\n#ifndef __Enum_H__\n#define __Enum_H__ 1\n#include \"..\\Enum\\Enum.cs\"\n\n\n\n\n\n\n";
 
                 //EnumForEach<Enum_.cas.Method>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_ABase>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_A.Cmd_1ThenCmd_2>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_A.Complex_Cmds>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_BBase>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_B.Cmd_1ThenCmd_2>(ref sAllText);
-                //EnumForEach<Enum_.cas.Module_B.Complex_Cmds>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModABase>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModA.Cmd_1ThenCmd_2>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModA.Complex_Cmds>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModBBase>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModB.Cmd_1ThenCmd_2>(ref sAllText);
+                //EnumForEach<Enum_.cas.ModB.Complex_Cmds>(ref sAllText);
                 EnumForEach<cas>(ref sAllText);
                 EnumForEach<CS>(ref sAllText);
                 EnumForEach<IP>(ref sAllText);

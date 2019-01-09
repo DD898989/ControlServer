@@ -41,7 +41,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(132, 38);
             this.button5.TabIndex = 13;
-            this.button5.Text = "Module_A Seq 1(NG)";
+            this.button5.Text = "ModA Seq 1(NG)";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -51,7 +51,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 40);
             this.button2.TabIndex = 15;
-            this.button2.Text = "Module_A Seq 2(NG)";
+            this.button2.Text = "ModA Seq 2(NG)";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -61,7 +61,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 43);
             this.button1.TabIndex = 17;
-            this.button1.Text = "Module_B Seq 2";
+            this.button1.Text = "ModB Seq 2";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -71,7 +71,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(132, 40);
             this.button3.TabIndex = 16;
-            this.button3.Text = "Module_B Seq 1";
+            this.button3.Text = "ModB Seq 1";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
