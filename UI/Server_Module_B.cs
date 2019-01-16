@@ -17,32 +17,32 @@ namespace UI
             {
                 case (int)CS.CS_ModB_Cmd_1:
                     p.log(_sLog + "Cmd_1");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 case (int)CS.CS_ModB_Cmd_2:
                     p.log(_sLog + "Cmd_2");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 case (int)CS.CS_ModB_Cmd_3:
                     p.log(_sLog + "Cmd_3");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 case (int)CS.CS_ModB_Cmd_4:
                     p.log(_sLog + "Cmd_4");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 case (int)CS.CS_ModB_Cmd_5:
                     p.log(_sLog + "Cmd_5");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 case (int)CS.CS_ModB_Cmd_6:
                     p.log(_sLog + "Cmd_6");
-                    System.Threading.Thread.Sleep(10);
+                    System.Threading.Thread.Sleep(500);
                     return (int)CS.CS_OK;
 
                 default:

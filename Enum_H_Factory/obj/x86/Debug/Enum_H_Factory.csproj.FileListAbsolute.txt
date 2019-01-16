@@ -140,3 +140,10 @@ C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum_H_Factor
 C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
 C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
 C:\Users\dave.gan\Desktop\ControlServer_killuplus300-at-gmail.com3\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\bin\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\bin\Debug\Enum_H_Factory.pdb
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\bin\Debug\Enum.dll
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\bin\Debug\Enum.pdb
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.exe
+C:\Users\lenovo\Desktop\ControlServer_killuplus300-at-gmail.com\Enum_H_Factory\obj\x86\Debug\Enum_H_Factory.pdb
